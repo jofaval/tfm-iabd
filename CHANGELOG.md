@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - Github Actions CI/CD basic integration (template only)
+- Basic Docker folder structure distribution
 
 ## 2022-02-25
 
