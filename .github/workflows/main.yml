@@ -1,0 +1,15 @@
+# name: Main
+# 
+# on:
+#   push:
+#     branches:
+#       - master
+# 
+# jobs:
+#   Deployment:
+#     runs-on: ubuntu-latest
+#     env:
+#       CI: false
+#     steps:
+#       - name: Check out repository code
+#         uses: actions/checkout@v2
