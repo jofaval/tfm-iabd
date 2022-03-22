@@ -7,9 +7,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Achieved
 
-- Project Started
 - Repository Initialized
 
 ### Added
 
 - Github Actions CI/CD basic integration (template only)
+
+## 2022-02-25
+
+### Achieved
+
+- Project Started
