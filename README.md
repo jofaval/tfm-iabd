@@ -192,12 +192,9 @@ Defined as Preparation of docker images, ready and interjoined to support the ar
 
 Docker (Docker-compose), Linux, if cloud computing were to be required (AWS, Azure or Google Cloud)
 
-#### Elementos
-- MongoDB
-- Linux with Python >= 3.8
-- Spark
-- Kafka
-- Linux with Node-RED
+#### Elements
+
+The information regarding the infrastructure it's at the [**Infraestructure**](#infrastructure-big-data-architecture) section.
 
 #### Asignees
 
