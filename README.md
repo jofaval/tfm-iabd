@@ -131,6 +131,10 @@ Handled by the Github Actions workflow
 
 _Table generated with: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)_
 
+## License
+
+The license used can be seen [here](./LICENSE) or downloading the LICENSE file
+
 ## Credits
 
 - 

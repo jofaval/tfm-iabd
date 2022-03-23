@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Basic folder structure
 - Basic app folder with global utilities and more to come
 - Basic Spark structure, and semi-flow
+- Use the MIT License
 
 ## 2022-02-25
 
