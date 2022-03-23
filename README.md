@@ -27,6 +27,14 @@ Being able to design, research, develop and deploy a Data Science idea designing
     1. [Stop the execution](#stop-the-execution)
     1. [Deployment](#deployment)
 1. [Team](#team)
+    1. [Infrastructure (Big Data Architecture)](#infrastructure-big-data-architecture)
+    1. [Data Extraction/Mining](#data-extractionmining)
+    1. [Data Normalization](#data-normalization)
+    1. [Data Storage/Loading](#data-storageloading)
+    1. [Data Cleansing](#data-cleansing)
+    1. [Data Science/Modeling (AI Engineering, sort of)](#data-sciencemodeling-ai-engineering-sort-of)
+    1. [Data Visualization](#data-visualization)
+    1. [Deploy (CI/CD integration)](#deploy-cicd-integration)
 1. [License](#license)
 1. [Credits](#credits)
 
@@ -143,6 +151,146 @@ Handled by the Github Actions workflow
 |   [Pepe](https://github.com/jofaval)   | Data Architect / Data Engineer / Data Scientist |
 
 _Table generated with: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)_
+
+I (Pepe) will be supervising each task, but we're all out here to help each other.
+
+### Infrastructure (Big Data Architecture)
+
+#### Description
+
+Defined as Preparation of docker images, ready and interjoined to support the architecture.
+
+#### Software
+
+Docker (Docker-compose), Linux, if cloud computing were to be required (AWS, Azure or Google Cloud)
+
+#### Elementos
+- MongoDB
+- Linux with Python >= 3.8
+- Spark
+- Kafka
+- Linux with Node-RED
+
+#### Asignees
+
+- Nerea
+- Juan
+- Pepe (only if cloud computing is required)
+
+### Data Extraction/Mining
+
+#### Description
+
+Defined as Retrieving all the necessary data for it's work. (JUST retrieving data)
+
+#### Software
+
+Node-RED
+
+#### Asignees
+
+- Nerea
+- Pepe
+- Everyone to search for Data Sources
+
+#### Data Sources
+
+- Twitter Developer API
+
+### Data Normalization
+
+#### Description
+
+Defined as After the data has being retrieved, create a middleground with the common data that may be needed so that all sources end up with the same Data Model, in other words, standarizing the sources.
+
+#### Software
+
+Node-RED
+
+#### Asignees
+
+- Diego
+- Nerea
+- Juan
+- Pepe
+
+### Data Storage/Loading
+
+#### Description
+
+Defined as Storing the normalized data into the NoSQL DB (MongoDB most likely).
+
+#### Software
+
+Node-RED
+
+#### Asignees
+
+- Nerea
+
+### Data Cleansing
+
+#### Description
+
+Defined as At this point, the data has been normalized, but not cleaned, the data should be ready for the Model to train with.
+
+#### Software
+
+Python (Google Colab?)
+
+#### Asignees
+
+- Diego
+- Juan
+- Pepe
+
+### Data Science/Modeling (AI Engineering, sort of)
+
+#### Description
+
+Defined as Developing and implement the required model(s) for the desired performance and outcome.
+
+Artificial Intelligence and/or Machine Learning.
+
+#### Software
+
+Python (Google Colab?)
+
+#### Asignees
+
+- Diego
+- Pepe
+
+### Data Visualization
+
+#### Description
+
+Defined as Designing and developing the story (StoryTelling) and all the required/desired visualizations for whaterever the outcome(s) are that we want.
+
+#### Software
+
+PowerBI or Tableau, up to taste.
+
+#### Asignees
+
+- Juan
+- Nerea
+- Diego
+
+### Deploy (CI/CD integration)
+
+#### Description
+
+Defined as Prepare the connections, and proper usage of the model via endpoints and utilities.
+
+#### Software
+
+Cloud Platform (if used), Git (Github)
+
+#### Asignees
+
+- Diego
+- Pepe
 
 ## License
 
