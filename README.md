@@ -140,8 +140,8 @@ _All the images versions will be provided on each Dockerfile with the exact vers
 Execute the following command on the folder you want to store the project in
 
 ```bash
-git clone https://github.com/jofaval/tfm-ia-big-data.git
-cd tfm-ia-big-data
+git clone https://github.com/jofaval/tfm-iabd.git
+cd tfm-iabd
 ```
 
 ### How to boot it

@@ -21,6 +21,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Use the MIT License
 - Official docker image docs
 
+### Modified
+
+- Changed repository name
+
 ## 2022-02-25
 
 ### Achieved
