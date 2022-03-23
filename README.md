@@ -20,6 +20,10 @@ Unkown
 
 TODO
 
+## Documentation
+
+For the official documentation visit the [/docs](/docs/README.md) folder
+
 ## Objectives
 
 - 
