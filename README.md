@@ -40,6 +40,7 @@ Being able to design, research, develop and deploy a Data Science idea designing
     1. [Data Visualization](#data-visualization)
     1. [Deploy (CI/CD integration)](#deploy-cicd-integration)
 1. [License](#license)
+1. [Legal Notice](#license)
 1. [Credits](#credits)
 
 ## Title
@@ -320,6 +321,10 @@ Cloud Platform (if used), Git (Github)
 ## License
 
 The license used can be seen [here](./LICENSE) or downloading the LICENSE file
+
+## Legal Notice
+
+TODO
 
 ## Credits
 
