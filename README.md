@@ -123,6 +123,7 @@ Handled by the Github Actions workflow
 | [Juan](https://github.com/juancrespin) |             Data Analyst / SysAdmin             |
 |      [Nerea](https://github.com/)      |             Data Engineer / SysAdmin            |
 |   [Pepe](https://github.com/jofaval)   | Data Architect / Data Engineer / Data Scientist |
+
 _Table generated with: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)_
 
 ## Credits
