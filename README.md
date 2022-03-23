@@ -9,6 +9,7 @@ Artificial Intelligence and Big Data
 1. [Objectives](#objectives)
 1. [Methodology](#methodology)
 1. [Tech Stack](#tech-stack)
+1. [Usage](#usage)
 1. [Team](#team)
 1. [Credits](#credits)
 
