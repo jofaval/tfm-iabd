@@ -2,6 +2,10 @@
 
 Artificial Intelligence and Big Data
 
+The motivation behind the project is to work as a team with the idea of joining everthing we've seen, in other words:
+
+Being able to design, research, develop and deploy a Data Science idea designing a Big Data Architecture from which to train a model with a conclusion in mind while being ethical and not breaking any EU laws
+
 ## Table of content
 
 1. [Title](#title)
@@ -33,10 +37,6 @@ Unkown
 ## Description
 
 TODO
-
-The motivation behind the project is to work as a team with the idea of joining everthing we've seen, in other words:
-
-Being able to design, research, develop and deploy a Data Science idea designing a Big Data Architecture from which to train a model with a conclusion in mind while being ethical and not breaking any EU laws
 
 ## Documentation
 
