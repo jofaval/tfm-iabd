@@ -195,7 +195,7 @@ Docker (Docker-compose), Linux, if cloud computing were to be required (AWS, Azu
 
 #### Elements
 
-The information regarding the infrastructure it's at the [**Infraestructure**](#infrastructure-big-data-architecture) section.
+The information regarding the infrastructure it's in the [**Infrastructure**](#tech-stack) section.
 
 #### Asignees
 
