@@ -11,6 +11,10 @@ Being able to design, research, develop and deploy a Data Science idea designing
 1. [Title](#title)
 1. [Description](#description)
 1. [Objectives](#objectives)
+1. [Ethics](#ethics)
+1. [Design](#design)
+    1. [Flow of the Data](#flow-of-the-data)
+    1. [Data Structure](#data-structure)
 1. [Methodology](#methodology)
     1. [Product Owner](#product-owner)
     1. [Scrum Muster](#scrum-muster)
@@ -53,6 +57,30 @@ For the official documentation visit the [/docs](/docs/README.md) folder
 ## Objectives
 
 - 
+
+## Ethics
+
+TODO
+
+## Design
+
+### Flow of the Data
+
+1. Node-RED recibe los datos y se los chuta a
+1. Kafka, que los distribuye a
+1. Spark para que sean transformados y almacenados en
+1. MongoDB y posteriormente extraídos con
+1. Google Colab/Python
+1. Entrenados con Spark y guardando las predicciones en
+1. MongoDB para leerlas posteriormente desde
+1. PowerBI/Tableau y mostrarlas en
+1. Azure Web Service con un Front sencillo de interacción básica
+
+### Data Structure
+
+All the data will have an origin tag/field as to better identify it's properties
+
+Queda decidir si tener una Data Warehouse (los datos guardados están estructurados, limpiados y siguen un orden) o un Data Lake (todo guardado a lo burro y ya se limpiará cuando se necesite, si es que se acaba necesitando)
 
 ## Methodology
 
