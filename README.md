@@ -91,10 +91,10 @@ Our teachers
 ### Requirements
 
 - Docker
-  - Engine Version 20.10
-  - Compose Version 1.29.2
+  - >= Engine Version 20.10
+  - >= Compose Version 1.29.2
 - Python
-  - \>= 3.6.x
+  - >= \>= 3.6.x
 
 _All the images versions will be provided on each Dockerfile with the exact version, avoid the `latest` for security reasons, upgrades will be manual._
 
