@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Github Actions CI/CD basic integration (template only)
 - Basic Docker folder structure distribution
 - Utility Docker tools
+- Basic README structure with some minor, provisional data
 
 ## 2022-02-25
 
