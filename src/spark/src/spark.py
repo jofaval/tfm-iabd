@@ -16,6 +16,9 @@ class SparkExecutor():
         """Boots the spark cluster"""
         raise NotImplementedError()
 
+        # TODO: configure channels
+        config['CHANNELS']
+
     # TODO: properly set the return type
     @classmethod
     def get_instance():
