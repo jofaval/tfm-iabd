@@ -1,12 +1,12 @@
 from conf import config
 
 class SparkExecutor():
-    """The main Spark's clusters executor"""
+    """The main Spark's cluster's executor"""
 
     instance = None
     """Global instance of the executor"""
 
-    # TOOD: properly type the returny
+    # TODO: properly set the return type
     def get_spark_context(self):
         """Returns the spark context"""
         # TODO: implement
@@ -16,7 +16,7 @@ class SparkExecutor():
         """Boots the spark cluster"""
         raise NotImplementedError()
 
-    # TOOD: properly set the return type
+    # TODO: properly set the return type
     @classmethod
     def get_instance():
         """Returns the SparkExecutor instance"""
