@@ -172,12 +172,12 @@ Handled by the Github Actions workflow
 
 ## Team
 
-|                  Name                  |                       Role                      |
-|:--------------------------------------:|:-----------------------------------------------:|
-|  [Diego](https://github.com/ddelcano)  |          Data Scientist / Data Analyst          |
-| [Juan](https://github.com/juancrespin) |             Data Analyst / SysAdmin             |
-|      [Nerea](https://github.com/)      |             Data Engineer / SysAdmin            |
-|   [Pepe](https://github.com/jofaval)   | Data Architect / Data Engineer / Data Scientist |
+|                          Name                          |                       Role                      |
+|:------------------------------------------------------:|:-----------------------------------------------:|
+| [Diego del Caño](https://github.com/ddelcanonavarrete) |          Data Scientist / Data Analyst          |
+|  [Juan Crespin Valero](https://github.com/juancrespin) |             Data Analyst / SysAdmin             |
+|      [Nerea Gluskova](https://github.com/Rubirea)      |             Data Engineer / SysAdmin            |
+|    [Pepe Fabra Valverde](https://github.com/jofaval)   | Data Architect / Data Engineer / Data Scientist |
 
 _Table generated with: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)_
 
