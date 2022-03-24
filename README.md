@@ -6,7 +6,7 @@ The motivation behind the project is to work as a team with the idea of joining 
 
 Being able to design, research, develop and deploy a Data Science idea designing a Big Data Architecture from which to train a model with a conclusion in mind while being ethical and not breaking any EU laws
 
-## Table of content
+## Table of Contents
 
 1. [Title](#title)
 1. [Description](#description)
@@ -44,28 +44,35 @@ Being able to design, research, develop and deploy a Data Science idea designing
 1. [Credits](#credits)
 
 ## Title
+[↑ Back to top](#table-of-contents)
 
 Unkown
 
 ## Description
+[↑ Back to top](#table-of-contents)
 
 TODO
 
 ## Documentation
+[↑ Back to top](#table-of-contents)
 
 For the official documentation visit the [/docs](/docs/README.md) folder
 
 ## Objectives
+[↑ Back to top](#table-of-contents)
 
 - 
 
 ## Ethics
+[↑ Back to top](#table-of-contents)
 
 TODO
 
 ## Design
+[↑ Back to top](#table-of-contents)
 
 ### Flow of the Data
+[↑ To the section](#design)
 
 1. Node-RED sniffs the data and sends them to
 1. Kafka, which itself distributes it to
@@ -78,12 +85,14 @@ TODO
 1. Azure Web Service with a simple Front with an even simpler interaction
 
 ### Data Structure
+[↑ To the section](#design)
 
 All the data will have an origin tag/field as to better identify it's properties
 
 Queda decidir si tener una Data Warehouse (los datos guardados están estructurados, limpiados y siguen un orden) o un Data Lake (todo guardado a lo burro y ya se limpiará cuando se necesite, si es que se acaba necesitando)
 
 ## Methodology
+[↑ Back to top](#table-of-contents)
 
 SCRUM
 
@@ -91,41 +100,51 @@ SCRUM
 - Planning Poker
 
 ### Product Owner
+[↑ To the section](#methodology)
 
 To be chosen
 
 ### Scrum Muster
+[↑ To the section](#methodology)
 
 Our teachers
 
 ### Software
+[↑ To the section](#methodology)
 
 - Trello
 
 ## Tech Stack
+[↑ Back to top](#table-of-contents)
 
 ### Programming Language
+[↑ To the section](#tech-stack)
 
 - Python
 
 ### ETL
+[↑ To the section](#tech-stack)
 
 1. Node-RED
 1. Kafka
 1. Spark
 
 ### Database
+[↑ To the section](#tech-stack)
 
 - MongoDB
 
 ### Cloud computing
+[↑ To the section](#tech-stack)
 
 - AWS (Canvas) or Azure
 - Terraform
 
 ## Usage
+[↑ Back to top](#table-of-contents)
 
 ### Requirements
+[↑ To the section](#usage)
 
 - Docker
   - > Engine Version 20.10
@@ -136,6 +155,7 @@ Our teachers
 _All the images versions will be provided on each Dockerfile with the exact version, avoid the `latest` for security reasons, upgrades will be manual._
 
 ### Install the project
+[↑ To the section](#usage)
 
 Execute the following command on the folder you want to store the project in
 
@@ -145,6 +165,7 @@ cd tfm-iabd
 ```
 
 ### How to boot it
+[↑ To the section](#usage)
 
 Execute the `tools/start.bat` file
 
@@ -156,6 +177,7 @@ docker-compose up -d
 ```
 
 ### Stop the execution
+[↑ To the section](#usage)
 
 Execute the `tools/stop.bat` file
 
@@ -167,10 +189,12 @@ docker-compose down
 ```
 
 ### Deployment
+[↑ To the section](#usage)
 
 Handled by the Github Actions workflow
 
 ## Team
+[↑ Back to top](#table-of-contents)
 
 |                          Name                          |                       Role                      |
 |:------------------------------------------------------:|:-----------------------------------------------:|
@@ -184,6 +208,7 @@ _Table generated with: [https://www.tablesgenerator.com/markdown_tables](https:/
 I (Pepe) will be supervising each task, but we're all out here to help each other.
 
 ### Infrastructure (Big Data Architecture)
+[↑ To the section](#team)
 
 #### Description
 
@@ -204,6 +229,7 @@ The information regarding the infrastructure it's in the [**Infrastructure**](#t
 - Pepe (only if cloud computing is required)
 
 ### Data Extraction/Mining
+[↑ To the section](#team)
 
 #### Description
 
@@ -224,6 +250,7 @@ Node-RED
 - Twitter Developer API
 
 ### Data Normalization
+[↑ To the section](#team)
 
 #### Description
 
@@ -241,6 +268,7 @@ Node-RED
 - Pepe
 
 ### Data Storage/Loading
+[↑ To the section](#team)
 
 #### Description
 
@@ -255,6 +283,7 @@ Node-RED
 - Nerea
 
 ### Data Cleansing
+[↑ To the section](#team)
 
 #### Description
 
@@ -271,6 +300,7 @@ Python (Google Colab?)
 - Pepe
 
 ### Data Science/Modeling (AI Engineering, sort of)
+[↑ To the section](#team)
 
 #### Description
 
@@ -288,6 +318,7 @@ Python (Google Colab?)
 - Pepe
 
 ### Data Visualization
+[↑ To the section](#team)
 
 #### Description
 
@@ -304,6 +335,7 @@ PowerBI or Tableau, up to taste.
 - Diego
 
 ### Deploy (CI/CD integration)
+[↑ To the section](#team)
 
 #### Description
 
@@ -319,13 +351,16 @@ Cloud Platform (if used), Git (Github)
 - Pepe
 
 ## License
+[↑ Back to top](#table-of-contents)
 
 The license used can be seen [here](./LICENSE) or downloading the LICENSE file
 
 ## Legal Notice
+[↑ Back to top](#table-of-contents)
 
 TODO
 
 ## Credits
+[↑ Back to top](#table-of-contents)
 
 - 
