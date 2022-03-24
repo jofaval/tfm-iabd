@@ -67,15 +67,15 @@ TODO
 
 ### Flow of the Data
 
-1. Node-RED recibe los datos y se los chuta a
-1. Kafka, que los distribuye a
-1. Spark para que sean transformados y almacenados en
-1. MongoDB y posteriormente extraídos con
+1. Node-RED sniffs the data and sends them to
+1. Kafka, which itself distributes it to
+1. Spark for them to be transformed and stored in
+1. MongoDB to be later retrieved with
 1. Google Colab/Python
-1. Entrenados con Spark y guardando las predicciones en
-1. MongoDB para leerlas posteriormente desde
-1. PowerBI/Tableau y mostrarlas en
-1. Azure Web Service con un Front sencillo de interacción básica
+1. To be trained with Spark saving the predictions in
+1. MongoDB so they can be accessed from
+1. PowerBI/Tableau and display them in
+1. Azure Web Service with a simple Front with an even simpler interaction
 
 ### Data Structure
 
