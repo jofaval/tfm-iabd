@@ -102,7 +102,12 @@ SCRUM
 ### Product Owner
 [↑ To the section](#methodology)
 
-To be chosen
+Diego
+
+### Tech/Team Lead
+[↑ To the section](#methodology)
+
+Pepe
 
 ### Scrum Muster
 [↑ To the section](#methodology)
