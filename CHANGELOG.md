@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Achieved
 
 - Product Owner and Tech/Team Lead role have been chosen
+- Title has been decided (by Diego)
 
 ## 2022-03-24
 
