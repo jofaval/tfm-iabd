@@ -368,4 +368,4 @@ TODO
 ## Credits
 [↑ Back to top](#table-of-contents)
 
-- 
+- Ismael, for the idea
