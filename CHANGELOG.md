@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Add git utilities to tools
  - Created the documentation
 - Create Frontend folder
+ - Install some basic necessary packages
+ - Configured basic eslint file
 
 ### Modified
 
