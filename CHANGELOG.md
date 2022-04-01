@@ -3,6 +3,13 @@ All the log of changes on the project/repository
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-04-01
+
+### Modified
+
+- Moved files to an app folder structure for clearer organization
+ - Renamed `src/app` to `app/src/module`
+
 ## 2022-03-27
 
 ### Achieved

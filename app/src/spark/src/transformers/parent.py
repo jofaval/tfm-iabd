@@ -1,4 +1,4 @@
-from app.utils.decorators import error_boundary
+from module.utils.decorators import error_boundary
 
 class SparkTransformer():
     """Base class for a transformer class, one for each channel"""
