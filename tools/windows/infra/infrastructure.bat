@@ -1,2 +1,2 @@
 REM Moves to the infraestructure folder
-cd ../app/src/infraestructure
+cd ../../../app/infra

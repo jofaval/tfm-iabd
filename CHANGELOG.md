@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Moved files to an app folder structure for clearer organization
  - Renamed `src/app` to `app/src/module`
+- Reestructure the tools folder
+ - Adding support to windows and linux
 
 ## 2022-03-27
 
