@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "element-ui": "^2.15.6",
+    "flow-bin": "^0.175.0",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-vue": "^8.5.0"
+  }
+}
