@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Backend container, there's a chance it may be moved to another repository, just for the website
  - FastAPI and uvicorn
 
+### Modified
+
+- Extended the spark transformer example with custom typing and folder reestrcutring
+
 ## 2022-04-01
 
 ### Added
