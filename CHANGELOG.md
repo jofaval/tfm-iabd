@@ -3,6 +3,13 @@ All the log of changes on the project/repository
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-04-02
+
+### Added
+
+- Backend container, there's a chance it may be moved to another repository, just for the website
+ - FastAPI and uvicorn
+
 ## 2022-04-01
 
 ### Added
