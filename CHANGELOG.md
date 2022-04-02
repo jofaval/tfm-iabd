@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Backend container, there's a chance it may be moved to another repository, just for the website
  - FastAPI and uvicorn
+- Create a Kafka topic shell script for easier usage
 
 ### Modified
 
@@ -25,7 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Add git utilities to tools
  - Created the documentation
 - Create Frontend folder
- - Install some basic necessary packages
+ - Install some basic necessary packages (vue.js with element, flow and eslint)
  - Configured basic eslint file
 
 ### Modified
