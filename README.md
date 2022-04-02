@@ -172,24 +172,24 @@ cd tfm-iabd
 ### How to boot it
 [↑ To the section](#usage)
 
-Execute the `tools/start.bat` file
+Execute the `tools/windows/infra/stop.bat` or the `tools/linux/infra/stop.sh` file
 
 or execute the following commands on the shell
 
 ```bash
-cd infraestructure
+cd app/infra
 docker-compose up -d
 ```
 
 ### Stop the execution
 [↑ To the section](#usage)
 
-Execute the `tools/stop.bat` file
+Execute the `tools/windows/infra/stop.bat` or the `tools/linux/infra/stop.sh` file
 
 or execute the following commands on the shell
 
 ```bash
-cd infraestructure
+cd app/infra
 docker-compose down
 ```
 

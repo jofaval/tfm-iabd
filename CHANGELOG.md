@@ -14,6 +14,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Extended the spark transformer example with custom typing and folder reestrcutring
 
+### Fixed
+
+- Update the usage section in the README with the correct execution scripts
+
 ## 2022-04-01
 
 ### Added
