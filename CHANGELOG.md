@@ -3,6 +3,8 @@ All the log of changes on the project/repository
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
+
 ## 2022-04-03
 
 ### Added
@@ -10,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `.env` file created for the Docker-Compose and an easier configuration
 - Add the ZooKeeper Dockerfile for Kafka cluster management
 - Configure the Docker Compose file with the basic requirements
+- Documented the Deployment and Docker implementations, and add a Docker's infrastructure CHANGELOG
 
 ## 2022-04-02
 
