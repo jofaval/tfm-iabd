@@ -14,6 +14,10 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 - Configure the Docker Compose file with the basic requirements
 - Documented the Deployment and Docker implementations, and add a Docker's infrastructure CHANGELOG
 
+### Modified
+
+- Reorganize types folder into models folder with a package `__init__` file for bundling
+
 ## 2022-04-02
 
 ### Added

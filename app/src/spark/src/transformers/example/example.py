@@ -1,4 +1,5 @@
 from parent import SparkTransformer
+from .models import TwitterResponse, Tweet, User
 
 class ExampleSparkTransformer(SparkTransformer):
     """Example Spark Transformer"""
