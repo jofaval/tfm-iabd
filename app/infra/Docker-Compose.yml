@@ -17,6 +17,7 @@ services:
       - ${NODERED_EXTERNAL_PORT}:${NODERED_INTERNAL_PORT}
   spark:
     # https://hub.docker.com/r/bitnami/spark/
+    # https://dev.to/mvillarrealb/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-2021-update-6l4
     build: "${SPARK_BUILD_PATH}"
     restart: always
     volumes:
