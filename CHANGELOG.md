@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - `.env` file created for the Docker-Compose and an easier configuration
 - Add the ZooKeeper Dockerfile for Kafka cluster management
+- Configure the Docker Compose file with the basic requirements
 
 ## 2022-04-02
 

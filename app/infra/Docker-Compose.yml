@@ -1,17 +1,84 @@
 # https://docs.docker.com/compose/
 
-version: "0.0"  # optional since v1.27.0
+version: "0.7.0"  # optional since v1.27.0
+
 services:
-  web:
-    build: .
-    ports:
-      - "8000:5000"
+  node-red:
+    # https://hub.docker.com/r/nodered/node-red/
+    build: "${NODERED_BUILD_PATH}"
+    depends_on:
+      - kafka
+    restart: always
+    networks:
+     - tfm-iabd-net
     volumes:
-      - .:/code
-      - logvolume01:/var/log
-    links:
-      - redis
-  redis:
-    image: redis
+      - node-red_data:/data
+    ports:
+      - ${NODERED_EXTERNAL_PORT}:${NODERED_INTERNAL_PORT}
+  spark:
+    # https://hub.docker.com/r/bitnami/spark/
+    build: "${SPARK_BUILD_PATH}"
+    restart: always
+    volumes:
+      - src:/spark/src
+    networks:
+     - tfm-iabd-net
+    depends_on:
+     - kafka
+     - mongodb
+  mongo:
+    # https://hub.docker.com/r/_/mongo/
+    build: "${MONGODB_BUILD_PATH}"
+    restart: always
+    networks:
+     - tfm-iabd-net
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - ${MONGODB_EXTERNAL_PORT}:${MONGODB_INTERNAL_PORT}
+    command: --serviceExecutor adaptive
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
+  zookeeper:
+    # https://www.baeldung.com/ops/kafka-docker-setup
+    build: "${ZOOKEEPER_BUILD_PATH}"
+    restart: always
+    networks:
+     - tfm-iabd-net
+    ports:
+      - ${ZOOKEEPER_EXTERNAL_PORT}:${ZOOKEEPER_INTERNAL_PORT}
+    volumes:
+      - zookeeper_data:/bitnami
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+  kafka:
+    # https://hub.docker.com/r/bitnami/kafka/
+    build: "${KAFKA_BUILD_PATH}"
+    restart: always
+    networks:
+     - tfm-iabd-net
+    ports:
+      - ${KAFKA_EXTERNAL_PORT}:${KAFKA_INTERNAL_PORT}
+    volumes:
+      - kafka_data:/bitnami
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:${ZOOKEEPER_EXTERNAL_PORT}
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    command: topics.sh
+    depends_on:
+      - zookeeper
+
 volumes:
-  logvolume01: {}
+  node-red_data:
+    driver: "local"
+  src:
+    driver: "local"
+  mongodb_data:
+    driver: "local"
+  zookeeper_data:
+    driver: "local"
+  kafka_data:
+    driver: "local"
+networks:
+  tfm-iabd-net: {}
