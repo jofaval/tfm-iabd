@@ -6,6 +6,12 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
+### Minor - 0.7.5 (2022-04-04)
+
+#### Features
+
+- Now the docker services have a forced name
+
 ### Major - 0.7.0 (2022-04-03)
 
 #### Features
