@@ -22,7 +22,7 @@ create_topic () {
 
     echo It will create a Kafka topic named "$topic_name" with $partitions partition(s) and $replicas replica(s) per partition, bootstrap at "$server"
 
-    /bin/kafka-topics.sh --create --bootstrap-server $server --replication-factor $replicas --partitions $partitions --topic "$topic_name"
+    /opt/kafka/bin/kafka-topics.sh --create --bootstrap-server $server --replication-factor $replicas --partitions $partitions --topic "$topic_name"
 
     echo Kafka topic successfully created!
 }

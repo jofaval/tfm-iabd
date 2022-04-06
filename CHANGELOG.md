@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
 
+## 2022-04-06
+
+### Fixed
+
+- Fixed the `topic.sh` incorrect kafka script path call
+
 ## 2022-04-04
 
 ### Modified
