@@ -10,6 +10,7 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 ### Fixed
 
 - Fixed the `topic.sh` incorrect kafka script path call
+- Changed the docker compose container name from `name` to `container_name`
 
 ## 2022-04-04
 

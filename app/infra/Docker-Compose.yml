@@ -1,10 +1,10 @@
 # https://docs.docker.com/compose/
 
-version: "0.7.5"  # optional since v1.27.0
+version: "0.7.10"  # optional since v1.27.0
 
 services:
   node-red:
-    name: node-red
+    container_name: node-red
     # https://hub.docker.com/r/nodered/node-red/
     build: "${NODERED_BUILD_PATH}"
     depends_on:
@@ -17,7 +17,7 @@ services:
     ports:
       - ${NODERED_EXTERNAL_PORT}:${NODERED_INTERNAL_PORT}
   spark:
-    name: spark
+    container_name: spark
     # https://hub.docker.com/r/bitnami/spark/
     # https://dev.to/mvillarrealb/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-2021-update-6l4
     build: "${SPARK_BUILD_PATH}"
@@ -30,7 +30,7 @@ services:
      - kafka
      - mongodb
   mongo:
-    name: mongo-db
+    container_name: mongo-db
     # https://hub.docker.com/r/_/mongo/
     build: "${MONGODB_BUILD_PATH}"
     restart: always
@@ -45,7 +45,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
   zookeeper:
-    name: zookeeper
+    container_name: zookeeper
     # https://www.baeldung.com/ops/kafka-docker-setup
     build: "${ZOOKEEPER_BUILD_PATH}"
     restart: always
@@ -58,7 +58,7 @@ services:
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
   kafka:
-    name: kafka
+    container_name: kafka
     # https://hub.docker.com/r/bitnami/kafka/
     build: "${KAFKA_BUILD_PATH}"
     restart: always
