@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
 
+## 2022-04-13
+
+### Added
+
+- The base Google Colab Jupyter Notebook for the model
+
 ## 2022-04-06
 
 ### Fixed
