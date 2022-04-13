@@ -6,6 +6,11 @@ The motivation behind the project is to work as a team with the idea of joining 
 
 Being able to design, research, develop and deploy a Data Science idea designing a Big Data Architecture from which to train a model with a conclusion in mind while being ethical and not breaking any EU laws
 
+### <p align="right">Grade</p>
+<p align="right">
+To be graded
+</p>
+
 ## Table of Contents
 
 1. [Title](#title)
