@@ -370,6 +370,11 @@ The license used can be seen [here](./LICENSE) or downloading the LICENSE file
 
 TODO
 
+## Use of the Data
+[↑ Back to top](#table-of-contents)
+
+TODO
+
 ## Credits
 [↑ Back to top](#table-of-contents)
 
