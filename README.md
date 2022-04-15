@@ -21,6 +21,9 @@ To be graded
     1. [Flow of the Data](#flow-of-the-data)
     1. [Data Structure](#data-structure)
     1. [Data Sources](#data-sources)
+1. [Product](#product)
+    1. [Product Roadmap](#product-roadmap)
+    1. [Product Management](#product-management)
 1. [Methodology](#methodology)
     1. [Product Owner](#product-owner)
     1. [Scrum Muster](#scrum-muster)
@@ -114,6 +117,21 @@ Queda decidir si tener una Data Warehouse (los datos guardados están estructura
 - YouTube
 - Reddit
 - Google Trends
+
+## Product
+[↑ Back to top](#table-of-contents)
+
+TODO
+
+### Product Roadmap
+[↑ To the section](#product)
+
+TODO
+
+### Product Management
+[↑ To the section](#product)
+
+TODO
 
 ## Methodology
 [↑ Back to top](#table-of-contents)
