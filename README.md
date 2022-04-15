@@ -64,7 +64,7 @@ This is research into what defines the success of films, and whether success can
 
 It is intended, as possible definitions of the success of a film, to be able to predict:
 
-- The collection of a film based on its initial investment and how much good it will be received
+- The benefits generated of a film based on its initial investment and how good will it be received
 - The acceptance/acclamation of a film with respect to the initial "hype"
 - Predict the note on IMDB a week after release, and whoever says IMDB can say other platforms (Rotten Tomatoes, Metacritic)
 - Predict your success (previously defined) one week after your release
@@ -411,7 +411,7 @@ Cloud Platform (if used), Git (Github)
 ## License
 [↑ Back to top](#table-of-contents)
 
-The license used can be seen [here](./LICENSE) or downloading the LICENSE file
+The license used (MIT License) can be seen [here](./LICENSE) or you can read it locally by downloading the LICENSE file
 
 ## Legal Notice
 [↑ Back to top](#table-of-contents)
