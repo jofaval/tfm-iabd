@@ -12,6 +12,10 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 - Jupyter Notebooks will now be ignored for the linguistic statistics
 - Added the project's description
 
+### Modified
+
+- Improving some minor (and not so minor) details in the README for a clearer explanation of the project, it's technologies choices, the design
+
 ## 2022-04-13
 
 ### Added

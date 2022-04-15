@@ -168,24 +168,31 @@ Our teachers
 [↑ To the section](#tech-stack)
 
 - Python
+An easy-to-learn language chosen, mainly, because it's what the team's most comfortable with related to Big Data and A.I. technologies and it's usage. There were alternatives such as Scala, C++ or Java.
 
 ### ETL
 [↑ To the section](#tech-stack)
 
 1. Node-RED
+A light weight graph/node based npm package for flow development to connect services, such as, APIs, and IoT.
 1. Kafka
+A data broker, one of the most used ones, if not the most used, meant to be used with Java or Scala, but can be interacted with through plugins, add-ons, and shell scripts
 1. Spark
+A highly efficient cluster computation and paralelization. It's API allows for Python (PySpark), Java, Scala, R and SQL, which makes it a perfect fit for our team. It is in high demand nowadays.
 
 ### Database
 [↑ To the section](#tech-stack)
 
 - MongoDB
+An opensource NoSQL document based Database, it has a great community and multiple implementations and integrations.
 
 ### Cloud computing
 [↑ To the section](#tech-stack)
 
-- AWS (Canvas) or Azure
-- Terraform
+- AWS or Azure
+Both greate cloud computing services that offer similar services, each with their own pros and cons, but both are top notch in the world of cloud computing, data science and DaaS (Data as a Service)
+- Terraform (and maybe AWS CloudFormation)
+IaC (Infrastructure as Code) is the way to go, cloudformation forces/restricts us to one service, but it is important that, however it is that we develop and deploy our cloud infrastructure, if ever, it is, cloud agnostic if possible, but easily replicable, and highly reliable, it should always produce the some output, the same outcome, without (as much) human mistake.
 
 ## Usage
 [↑ Back to top](#table-of-contents)
