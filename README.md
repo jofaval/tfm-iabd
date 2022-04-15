@@ -56,7 +56,16 @@ To be graded
 ## Description
 [↑ Back to top](#table-of-contents)
 
-TODO
+This is research into what defines the success of films, and whether success can be predicted (proportionally) based on the hype (expectation) generated around a film; to be able to be expandable with both series and anime, video games or any other type of multimedia content or not.
+
+It is intended, as possible definitions of the success of a film, to be able to predict:
+
+- The collection of a film based on its initial investment and how much good it will be received
+- The acceptance/acclamation of a film with respect to the initial "hype"
+- Predict the note on IMDB a week after release, and whoever says IMDB can say other platforms (Rotten Tomatoes, Metacritic)
+- Predict your success (previously defined) one week after your release
+
+For this, various data sources will be used, such as: Twitter, Reddit, YouTube, IMDB, and those that we can discover as the investigation progresses. One of the main and central components of the application is sentiment analysis, which would become the main focus of the prediction.
 
 ## Documentation
 [↑ Back to top](#table-of-contents)
