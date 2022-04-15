@@ -190,7 +190,7 @@ An opensource NoSQL document based Database, it has a great community and multip
 [↑ To the section](#tech-stack)
 
 - AWS or Azure
-Both greate cloud computing services that offer similar services, each with their own pros and cons, but both are top notch in the world of cloud computing, data science and DaaS (Data as a Service)
+Both great cloud computing services that offer similar services, each with their own pros and cons, but both are top notch in the world of cloud computing, data science and DaaS (Data as a Service)
 - Terraform (and maybe AWS CloudFormation)
 IaC (Infrastructure as Code) is the way to go, cloudformation forces/restricts us to one service, but it is important that, however it is that we develop and deploy our cloud infrastructure, if ever, it is, cloud agnostic if possible, but easily replicable, and highly reliable, it should always produce the some output, the same outcome, without (as much) human mistake.
 
