@@ -20,6 +20,7 @@ To be graded
 1. [Design](#design)
     1. [Flow of the Data](#flow-of-the-data)
     1. [Data Structure](#data-structure)
+    1. [Data Sources](#data-sources)
 1. [Methodology](#methodology)
     1. [Product Owner](#product-owner)
     1. [Scrum Muster](#scrum-muster)
@@ -104,6 +105,15 @@ TODO
 All the data will have an origin tag/field as to better identify it's properties
 
 Queda decidir si tener una Data Warehouse (los datos guardados están estructurados, limpiados y siguen un orden) o un Data Lake (todo guardado a lo burro y ya se limpiará cuando se necesite, si es que se acaba necesitando)
+
+### Data Sources
+[↑ To the section](#design)
+
+- IMDB
+- Twitter
+- YouTube
+- Reddit
+- Google Trends
 
 ## Methodology
 [↑ Back to top](#table-of-contents)
@@ -267,6 +277,10 @@ Node-RED
 #### Data Sources
 
 - Twitter Developer API
+- IMDB API
+- YouTube API
+- Reddit API
+- Google Trends
 
 ### Data Normalization
 [↑ To the section](#team)
