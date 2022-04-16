@@ -1,84 +1,115 @@
 # https://docs.docker.com/compose/
 
-version: "0.7.10"  # optional since v1.27.0
+version: "0.9.0"  # optional since v1.27.0
+
+# ----------ORDER----------
+# 1. container_name
+# 2. build/image
+# 3. depends_on
+# 4. restart
+# 5. volumes
+# 6. networks
+# 7. ports
+# 8. [user]
+# 9. [environment]
 
 services:
   node-red:
-    container_name: node-red
     # https://hub.docker.com/r/nodered/node-red/
+    container_name: node-red
     build: "${NODERED_BUILD_PATH}"
     depends_on:
       - kafka
     restart: always
-    networks:
-     - tfm-iabd-net
     volumes:
       - node-red_data:/data
+    networks:
+     - tfm-iabd-net
     ports:
       - ${NODERED_EXTERNAL_PORT}:${NODERED_INTERNAL_PORT}
-  spark:
-    container_name: spark
+  spark-master:
     # https://hub.docker.com/r/bitnami/spark/
     # https://dev.to/mvillarrealb/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-2021-update-6l4
+    container_name: spark-master
     build: "${SPARK_BUILD_PATH}"
+    depends_on:
+     - kafka
+     - mongodb
+    restart: always
+    volumes:
+      - spark_data:/spark
+    networks:
+     - tfm-iabd-net
+    user: ${SPARK_USER}
+    environment:
+      SPARK_MODE: master
+  spark-worker:
+    # https://hub.docker.com/r/bitnami/spark/
+    container_name: spark-worker
+    build: "${SPARK_BUILD_PATH}"
+    depends_on:
+     - spark-master
     restart: always
     volumes:
       - src:/spark/src
     networks:
      - tfm-iabd-net
-    depends_on:
-     - kafka
-     - mongodb
+    user: ${SPARK_USER}
+    environment:
+      SPARK_MODE: worker
+      SPARK_MASTER_URL: spark://spark:7077
   mongo:
-    container_name: mongo-db
     # https://hub.docker.com/r/_/mongo/
+    container_name: mongo-db
     build: "${MONGODB_BUILD_PATH}"
     restart: always
-    networks:
-     - tfm-iabd-net
     volumes:
       - mongodb_data:/data/db
+    networks:
+     - tfm-iabd-net
     ports:
       - ${MONGODB_EXTERNAL_PORT}:${MONGODB_INTERNAL_PORT}
-    command: --serviceExecutor adaptive
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
+    # command: --serviceExecutor adaptive
   zookeeper:
-    container_name: zookeeper
     # https://www.baeldung.com/ops/kafka-docker-setup
+    container_name: zookeeper
     build: "${ZOOKEEPER_BUILD_PATH}"
     restart: always
+    volumes:
+      - zookeeper_data:/bitnami
     networks:
      - tfm-iabd-net
     ports:
       - ${ZOOKEEPER_EXTERNAL_PORT}:${ZOOKEEPER_INTERNAL_PORT}
-    volumes:
-      - zookeeper_data:/bitnami
+    user: root
     environment:
-      - ALLOW_ANONYMOUS_LOGIN=yes
+      ALLOW_ANONYMOUS_LOGIN: yes
+      ZOO_MAX_CNXNS: ${ZOOKEEPER_MAX_CONECTIONS}
   kafka:
-    container_name: kafka
     # https://hub.docker.com/r/bitnami/kafka/
+    container_name: kafka
     build: "${KAFKA_BUILD_PATH}"
+    depends_on:
+      - zookeeper
     restart: always
+    volumes:
+      - kafka_data:/bitnami
     networks:
      - tfm-iabd-net
     ports:
       - ${KAFKA_EXTERNAL_PORT}:${KAFKA_INTERNAL_PORT}
-    volumes:
-      - kafka_data:/bitnami
+    command: boot.sh
     environment:
-      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:${ZOOKEEPER_EXTERNAL_PORT}
-      - ALLOW_PLAINTEXT_LISTENER=yes
-    command: topics.sh
-    depends_on:
-      - zookeeper
+      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:${ZOOKEEPER_EXTERNAL_PORT}
+      ALLOW_PLAINTEXT_LISTENER: yes
 
 volumes:
   node-red_data:
     driver: "local"
-  src:
+  spark_data:
     driver: "local"
   mongodb_data:
     driver: "local"

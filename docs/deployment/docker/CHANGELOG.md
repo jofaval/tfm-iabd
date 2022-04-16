@@ -6,6 +6,20 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
+### Minor - 0.9.0 (2022-04-16)
+
+#### Features
+
+- The order of the services parameters has been standarized so they're the same
+
+### Major - 0.8.0 (2022-04-16)
+
+#### Features
+
+- ZooKeeper and Spark are now properly configured
+- Some new `.env` variables are now in use
+- The environment section's formatting of each service has been changed. This may be breaking
+
 ### Minor - 0.7.5 (2022-04-04)
 
 #### Features
