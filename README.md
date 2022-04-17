@@ -28,8 +28,8 @@ To be graded
     1. [Product Owner](#product-owner)
     1. [Scrum Muster](#scrum-muster)
     1. [Software](#software)
-    1. [Programming Language](#programming-language)
 1. [Tech Stack](#tech-stack)
+    1. [Programming Language](#programming-language)
     1. [ETL](#etl)
     1. [Database](#database)
     1. [Cloud computing](#cloud-computing)
@@ -50,7 +50,7 @@ To be graded
     1. [Data Visualization](#data-visualization)
     1. [Deploy (CI/CD integration)](#deploy-cicd-integration)
 1. [License](#license)
-1. [Legal Notice](#license)
+1. [Legal Notice](#legal-notice)
 1. [Credits](#credits)
 
 ## Title
@@ -122,7 +122,7 @@ All the data will have an origin tag/field as to better identify it's properties
 
 #### Data Lake
 
-Instead of following the classic paradigm of ETL, first extract the data, then transform it BEFORE loading it. Data Lakes strive for the ELT, extract the data, load it FIRST then transform it when you need to use it.
+Instead of following the classic paradigm of ETL, first extract the data, then transform it BEFORE loading it. Data Lakes strives for the ELT, extract the data, load it FIRST then transform it when you need to use it.
 
 And we'll be using it to store all the (raw) data, that we collect in the span of the project. We'll be having Diogenes syndrome towards the data. We'd rather delete data than not having enough.
 
@@ -472,3 +472,6 @@ As for the tools, Tableau, but maybe we could get PowerBI through studentship, i
 [↑ Back to top](#table-of-contents)
 
 - Ismael, for the idea
+
+## Gratitude
+
