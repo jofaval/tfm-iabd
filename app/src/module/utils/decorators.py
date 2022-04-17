@@ -1,4 +1,5 @@
 # TODO: implement decorator that allows for a decorator to take parameters, (stackoverflow python bootcamp)
+import functools, time
 
 def logger(filename:str = 'log.txt') -> None:
     """
@@ -23,3 +24,24 @@ def error_boundary(use_logger: bool = False, propagate: bool = False) -> None:
     returns None
     """
     raise NotImplementedError()
+
+def benchmark(func):
+    """
+    Print the runtime of the decorated function
+
+    Reference:
+        https://realpython.com/primer-on-python-decorators/#timing-functions
+
+    returns None
+    """
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        start_time = time.perf_counter()
+        value = func(*args, **kwargs)
+        end_time = time.perf_counter()
+        run_time = end_time - start_time
+
+        print(f"Finished {func.__name__!r} in {run_time:.4f} secs")
+        return value
+
+    return wrapper_timer

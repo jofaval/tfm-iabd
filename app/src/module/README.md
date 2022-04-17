@@ -15,4 +15,4 @@ All the elements that have been developed, grouped by sections depending on it's
 - Decorators
  - logger
  - error_boundary
- - benchmarking
+ - benchmark
