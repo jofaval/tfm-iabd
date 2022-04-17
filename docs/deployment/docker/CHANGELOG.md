@@ -6,6 +6,18 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
+### Major - 0.12.0 (2022-04-17)
+
+#### Features
+
+- Added frontend container (node/vue image)
+
+### Major - 0.11.0 (2022-04-17)
+
+#### Features
+
+- Added backend container (FastAPI image)
+
 ### Major - 0.10.0 (2022-04-17)
 
 #### Features

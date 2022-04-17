@@ -1,6 +1,6 @@
 # https://docs.docker.com/compose/
 
-version: "0.10.0"  # optional since v1.27.0
+version: "0.12.0"  # optional since v1.27.0
 
 # ----------ORDER----------
 # 1.  container_name
@@ -167,6 +167,48 @@ services:
     environment:
       KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:${ZOOKEEPER_EXTERNAL_PORT}
       ALLOW_PLAINTEXT_LISTENER: yes
+  backend:
+    # https://fastapi.tiangolo.com/deployment/docker/
+    container_name: backend
+    build: "${BACKEND_BUILD_PATH}"
+    depends_on:
+      - mongo-db
+    # scale: 1
+    deploy:
+      resources:
+        reservations:
+          cpus: '1'
+          memory: 256M
+        restart_policy:
+          condition: on-failure
+    restart: always
+    volumes:
+      - backend_data:/data
+    networks:
+     - tfm-iabd-net
+    expose:
+      - ${BACKEND_EXTERNAL_PORT}:${BACKEND_INTERNAL_PORT}
+  frontend:
+    # https://hub.docker.com/_/node
+    container_name: frontend
+    build: "${FRONTEND_BUILD_PATH}"
+    depends_on:
+      - backend
+    # scale: 1
+    deploy:
+      resources:
+        reservations:
+          cpus: '1'
+          memory: 256M
+        restart_policy:
+          condition: on-failure
+    restart: always
+    volumes:
+      - frontend_data:/data
+    networks:
+     - tfm-iabd-net
+    ports:
+      - ${FRONTEND_EXTERNAL_PORT}:${FRONTEND_INTERNAL_PORT}
 
 volumes:
   node-red_data:
@@ -178,6 +220,10 @@ volumes:
   zookeeper_data:
     driver: "local"
   kafka_data:
+    driver: "local"
+  backend_data:
+    driver: "local"
+  frontend_data:
     driver: "local"
 networks:
   tfm-iabd-net: {}
