@@ -14,6 +14,7 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 - Expanded the topics shell scripts
  - It now can list all the topics
  - It can create topics from a file
+- The python module is now correctly setup and ready for packaging and installation
 
 ### Modified
 
