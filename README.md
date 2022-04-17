@@ -146,17 +146,51 @@ It will serve us as the main storage for our models, all the data that comes to 
 ## Product
 [↑ Back to top](#table-of-contents)
 
-TODO
+We're not going to sell anyting, but, our Product idea is to have a model that retrains with differente sources of information to display the outcome on the web and with some storytelling with the conclusion.
 
 ### Product Roadmap
 [↑ To the section](#product)
 
-TODO
-
-### Product Management
+#### Original estimation
 [↑ To the section](#product)
 
-TODO
+The initial stimation, it should be updated with the real roadmap at the end.
+
+![Roadmap](/pages/screenshots/home/Product%20Roadmap%2017-04-2022.png)
+<p align="center">Initial product roadmap</p>
+
+#### Real
+[↑ To the section](#product)
+
+**_The project has not yet been finished_**
+
+### How is the Product managed?
+[↑ To the section](#product)
+
+We've splitted the product in different phases. The traditiona Product phases, and expanded the Data Science development ones:
+
+#### Traditional
+[↑ To the section](#product)
+
+- Product Identification
+- Product Planification
+- Product Development
+- Product Control
+- Product Closure
+
+#### Product Development
+[↑ To the section](#product)
+
+- Infrastructure
+- Data Extraction
+- Data Normalization
+- Data Storage/Loading
+- Data Cleansing
+- Data Science/Modeling
+- Data Visualization
+- Deploy
+- Documentation Draft
+- Validation
 
 ## Methodology
 [↑ Back to top](#table-of-contents)

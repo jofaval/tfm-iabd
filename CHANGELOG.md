@@ -18,7 +18,7 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 
 ### Modified
 
-- Explained most of the TODO sections at the README
+- Explained almost all of the TODO sections at the README, but changes will surely be made
 
 ### Modified
 
