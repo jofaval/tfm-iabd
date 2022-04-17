@@ -97,7 +97,9 @@ _Not in a specific order._
 ## Ethics
 [↑ Back to top](#table-of-contents)
 
-TODO
+Our idea is to have a non-biased model that does not get influenced by people's opinion, rather, can know the difference between the general sentiment and how well will it reflect the movie's success.
+
+Regarding the ethics, our goal woudln't be to forcefeed certain movies, nor to dictate whatpeople should do/watch, it'd be to have, just another tool to decide what you may want to see.
 
 ## Design
 [↑ Back to top](#table-of-contents)
