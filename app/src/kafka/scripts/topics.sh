@@ -29,3 +29,16 @@ create_topic () {
 
 # Usage Example
 create_topic "tweets" 1 1 "localhost:9092"
+
+# Lists all Kafka topics
+# 
+# Example:
+# list_topics
+# Returns all the topics currently active
+# 
+# Doesn't return something
+list_topics () {
+    /opt/kafka/bin/kafka-topics.sh --list
+}
+
+list_topics
