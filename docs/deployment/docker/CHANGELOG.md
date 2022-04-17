@@ -25,6 +25,7 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 - ZooKeeper and Spark are now properly configured
 - Some new `.env` variables are now in use
 - The environment section's formatting of each service has been changed. This may be breaking
+- Kafka now has a configured boot shell script (`boot.sh`)
 
 ### Minor - 0.7.5 (2022-04-04)
 
