@@ -6,7 +6,7 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
-### Major - 0.12.4 (2022-04-17)
+### Minor - 0.12.4 (2022-04-17)
 
 #### Features
 
