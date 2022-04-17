@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
 
+## 2022-04-17
+
+### Added
+
+- Created Kafka shell scripts for an easier control and usage
+
+## 2022-04-16
+
+### Modified
+
+- Adjusted the Docker-Compose, more details at the [CHANGELOG](./docs/deployment/docker/CHANGELOG.md)
+
 ## 2022-04-15
 
 ### Added
