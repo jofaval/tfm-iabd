@@ -80,7 +80,19 @@ For the official documentation visit the [/docs](/docs/README.md) folder
 ## Objectives
 [↑ Back to top](#table-of-contents)
 
-- 
+_Not in a specific order._
+
+- Teamwork as a team of Data Sciencist with (almost) no experience in the data field.
+- Use knowledge from every subject seen in the degree.
+- Develop all the required elements components and integrate them.
+- Design a Data Infrastructure.
+- Research about the movie's hype and it's success, and it's total box-office.
+- Manage and develop an E2E (end-to-end) Big Data project, from idea to analysis/visualizations.
+- Apply AI Engineering techniques to deliver a product that showcases our conclusion.
+- Develop the (A.I. and machine learning) models required for the desired outcome.
+- Use Cloud Computing Services where needed and learn to work with them.
+- Fullfill a Data Science Project requirements with a Data Team.
+- Trying to understand and predict the box office of blockbuster (mainly) movies, wether independent or from a franchise.
 
 ## Ethics
 [↑ Back to top](#table-of-contents)
