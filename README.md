@@ -145,7 +145,7 @@ SCRUM
 ### Product Owner
 [↑ To the section](#methodology)
 
-Diego
+Pepe
 
 ### Tech/Team Lead
 [↑ To the section](#methodology)
