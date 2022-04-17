@@ -28,7 +28,30 @@ create_topic () {
 }
 
 # Usage Example
-create_topic "tweets" 1 1 "localhost:9092"
+# create_topic "tweets" 1 1 "localhost:9092"
+
+# Creates topics from a given file
+# 
+# Example:
+# create_topics_from_file "./data/topics.txt" ";"
+# Creates all the topics configured in the ./data/topics.txt file delimited by the ";" char
+# 
+# Reference:
+# https://stackoverflow.com/questions/43115759/how-to-create-a-list-of-topics-in-apache-kafka-using-single-command#answer-52529671
+# 
+# Doesn't return something
+create_topics_from_file () {
+    # The relative path to the file
+    filename=${1:-"./data/topics.txt"}
+
+    # The param delimiter used in the file
+    delimiter=${2:-";"}
+
+    awk -F"$delimiter" '{ system("create_topic "$1" "$2" "$3" "$4") }' $filename
+}
+
+# Usage Example
+create_topics_from_file
 
 # Lists all Kafka topics
 # 
@@ -41,4 +64,5 @@ list_topics () {
     /opt/kafka/bin/kafka-topics.sh --list
 }
 
+# Usage Example
 list_topics

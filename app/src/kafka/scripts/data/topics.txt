@@ -1,0 +1,5 @@
+tweets;1;1;localhost:9092
+imdb;1;1;localhost:9092
+youtube;1;1;localhost:9092
+reddit;1;1;localhost:9092
+google-trends;1;1;localhost:9092

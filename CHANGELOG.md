@@ -11,6 +11,9 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 
 - Created Kafka shell scripts for an easier control and usage
 - Infrastructure is now explained and added to the Tech Stack section
+- Expanded the topics shell scripts
+ - It now can list all the topics
+ - It can create topics from a file
 
 ### Modified
 
