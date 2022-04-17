@@ -6,6 +6,18 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
+### Minor - 0.12.6 (2022-04-17)
+
+#### Features
+
+- Changed the order of the docker compose services arguments
+
+### Major - 0.12.5 (2022-04-17)
+
+#### Features
+
+- Added built image name and version configuration
+
 ### Minor - 0.12.4 (2022-04-17)
 
 #### Features

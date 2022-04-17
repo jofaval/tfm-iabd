@@ -1,25 +1,28 @@
 # https://docs.docker.com/compose/
 
-version: "0.12.4" # optional since v1.27.0
+version: "0.12.6" # optional since v1.27.0
 
 # ----------ORDER----------
 # 1.  container_name
-# 2.  build/image
-# 3.  scale
-# 4.  [deploy]
-# 5.  depends_on
-# 6.  restart
-# 7.  volumes
-# 8.  networks
-# 9.  ports
-# 10. [user]
-# 11. [environment]
+# 2.  build
+# 3.  image
+# 4.  scale
+# 5.  [deploy]
+# 6.  depends_on
+# 7.  restart
+# 8.  volumes
+# 9.  networks
+# 10. ports
+# 11. [user]
+# 12. [environment]
 
 services:
   node-red:
-    # https://hub.docker.com/r/nodered/node-red/
     container_name: node-red
-    build: "${NODERED_BUILD_PATH}"
+    # https://hub.docker.com/r/nodered/node-red/
+    build:
+      context: ${NODERED_BUILD_PATH}
+    image: node-red:${NODERED_VERSION}
     depends_on:
       - kafka
     # scale: 1
@@ -39,9 +42,11 @@ services:
       - ${NODERED_EXTERNAL_PORT}:${NODERED_INTERNAL_PORT}
   spark-master:
     # https://hub.docker.com/r/bitnami/spark/
-    # https://dev.to/mvillarrealb/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-2021-update-6l4
     container_name: spark-master
-    build: "${SPARK_BUILD_PATH}"
+    # https://dev.to/mvillarrealb/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-2021-update-6l4
+    build:
+      context: ${SPARK_BUILD_PATH}
+    image: spark-master:${SPARK_VERSION}
     # scale: 2
     deploy:
       resources:
@@ -65,9 +70,11 @@ services:
     environment:
       SPARK_MODE: master
   spark-worker:
-    # https://hub.docker.com/r/bitnami/spark/
     container_name: spark-worker
-    build: "${SPARK_BUILD_PATH}"
+    # https://hub.docker.com/r/bitnami/spark/
+    build:
+      context: ${SPARK_BUILD_PATH}
+    image: spark-worker:${SPARK_VERSION}
     # scale: 6
     deploy:
       resources:
@@ -91,9 +98,11 @@ services:
       SPARK_MODE: worker
       SPARK_MASTER_URL: spark://spark:7077
   mongo:
-    # https://hub.docker.com/r/_/mongo/
     container_name: mongo-db
-    build: "${MONGODB_BUILD_PATH}"
+    # https://hub.docker.com/r/_/mongo/
+    build:
+      context: ${MONGODB_BUILD_PATH}
+    image: mongo-db:${MONGODB_VERSION}
     # scale: 2
     deploy:
       resources:
@@ -114,9 +123,11 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
     # command: --serviceExecutor adaptive
   zookeeper:
-    # https://www.baeldung.com/ops/kafka-docker-setup
     container_name: zookeeper
-    build: "${ZOOKEEPER_BUILD_PATH}"
+    # https://www.baeldung.com/ops/kafka-docker-setup
+    build:
+      context: ${ZOOKEEPER_BUILD_PATH}
+    image: zookeeper:${ZOOKEEPER_VERSION}
     # scale: 2
     deploy:
       resources:
@@ -140,9 +151,11 @@ services:
       ALLOW_ANONYMOUS_LOGIN: yes
       ZOO_MAX_CNXNS: ${ZOOKEEPER_MAX_CONECTIONS}
   kafka:
-    # https://hub.docker.com/r/bitnami/kafka/
     container_name: kafka
-    build: "${KAFKA_BUILD_PATH}"
+    # https://hub.docker.com/r/bitnami/kafka/
+    build:
+      context: ${KAFKA_BUILD_PATH}
+    image: kafka:${KAFKA_VERSION}
     # scale: 6
     deploy:
       resources:
@@ -168,9 +181,11 @@ services:
       KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:${ZOOKEEPER_EXTERNAL_PORT}
       ALLOW_PLAINTEXT_LISTENER: yes
   backend:
-    # https://fastapi.tiangolo.com/deployment/docker/
     container_name: backend
-    build: "${BACKEND_BUILD_PATH}"
+    # https://fastapi.tiangolo.com/deployment/docker/
+    build:
+      context: ${BACKEND_BUILD_PATH}
+    image: backend:${BACKEND_VERSION}
     depends_on:
       - mongo-db
     # scale: 1
@@ -189,9 +204,11 @@ services:
     expose:
       - ${BACKEND_EXTERNAL_PORT}:${BACKEND_INTERNAL_PORT}
   frontend:
-    # https://hub.docker.com/_/node
     container_name: frontend
-    build: "${FRONTEND_BUILD_PATH}"
+    # https://hub.docker.com/_/node
+    build:
+      context: ${FRONTEND_BUILD_PATH}
+    image: frontend:${FRONTEND_VERSION}
     depends_on:
       - backend
     # scale: 1
