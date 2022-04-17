@@ -437,7 +437,9 @@ The license used (MIT License) can be seen [here](./LICENSE) or you can read it 
 ## Legal Notice
 [↑ Back to top](#table-of-contents)
 
-TODO
+All the data used is being used and stored up-to-date with the European Union's legislation, more precisely, to Span's laws which comply with E.U.'s law [GDPR (General Data Protection Regulation)](https://gdpr-info.eu/) and following the standards described at the [Charter of European Digital Rights (EDRi, EDR initiative)](https://edri.org/), surrounding the usage A.I. towards sentiment analysis and overall in the possible bias it may provide to the user. As to be ethical and prepare the model for the coming years.
+
+For more information about the ethics of our model, please refer to the [Ethics' section](#ethics).
 
 ## Use of the Data
 [↑ Back to top](#table-of-contents)
