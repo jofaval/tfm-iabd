@@ -10,6 +10,7 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 ### Added
 
 - Created Kafka shell scripts for an easier control and usage
+- Infrastructure is now explained and added to the Tech Stack section
 
 ### Modified
 

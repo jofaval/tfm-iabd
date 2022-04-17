@@ -33,6 +33,7 @@ To be graded
     1. [ETL](#etl)
     1. [Database](#database)
     1. [Cloud computing](#cloud-computing)
+    1. [Infrastructure](#infrastructure)
 1. [Usage](#usage)
     1. [Requirements](#requirements)
     1. [Install the project](#install-the-project)
@@ -193,6 +194,14 @@ An opensource NoSQL document based Database, it has a great community and multip
 Both great cloud computing services that offer similar services, each with their own pros and cons, but both are top notch in the world of cloud computing, data science and DaaS (Data as a Service)
 - **Terraform (and maybe AWS CloudFormation)**\
 IaC (Infrastructure as Code) is the way to go, cloudformation forces/restricts us to one service, but it is important that, however it is that we develop and deploy our cloud infrastructure, if ever, it is, cloud agnostic if possible, but easily replicable, and highly reliable, it should always produce the some output, the same outcome, without (as much) human mistake.
+
+### Infrastructure
+[↑ To the section](#tech-stack)
+
+- **Docker**\
+An open-source software container service that adds and extra layer of abstraction for packing software solutions
+- **Compose**\
+A cloud-agnostic standard for container orchestration maintained by Docker that is supported by: Docker Swarm, AWS ECS, Azure Container Instances, and many more.
 
 ## Usage
 [↑ Back to top](#table-of-contents)
