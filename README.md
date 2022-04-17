@@ -120,7 +120,17 @@ TODO
 
 All the data will have an origin tag/field as to better identify it's properties
 
-Queda decidir si tener una Data Warehouse (los datos guardados están estructurados, limpiados y siguen un orden) o un Data Lake (todo guardado a lo burro y ya se limpiará cuando se necesite, si es que se acaba necesitando)
+#### Data Lake
+
+Instead of following the classic paradigm of ETL, first extract the data, then transform it BEFORE loading it. Data Lakes strive for the ELT, extract the data, load it FIRST then transform it when you need to use it.
+
+And we'll be using it to store all the (raw) data, that we collect in the span of the project. We'll be having Diogenes syndrome towards the data. We'd rather delete data than not having enough.
+
+#### Data Warehouse
+
+From this point forward we should have quality data, data that is "clean". Following the aforementioned ELT paradigm, a Data Warehouse is where the information will be loaded ONCE Transformed.
+
+It will serve us as the main storage for our models, all the data that comes to this point, should and must be: clean, standarized, normalized and regularized. It should be as ready as possible for the model.
 
 ### Data Sources
 [↑ To the section](#design)
