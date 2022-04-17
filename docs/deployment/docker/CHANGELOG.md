@@ -6,6 +6,12 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
+### Major - 0.10.0 (2022-04-17)
+
+#### Features
+
+- The deployment, wether with Docker Swarm, AWS ECS or Azure Container Instances, is now configure for scalability and the use of self load balancing
+
 ### Minor - 0.9.0 (2022-04-16)
 
 #### Features
