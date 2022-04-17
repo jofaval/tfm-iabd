@@ -23,7 +23,7 @@ To be graded
     1. [Data Sources](#data-sources)
 1. [Product](#product)
     1. [Product Roadmap](#product-roadmap)
-    1. [Product Management](#product-management)
+    1. [How is the Product managed?](#how-is-the-product-managed)
 1. [Methodology](#methodology)
     1. [Product Owner](#product-owner)
     1. [Scrum Muster](#scrum-muster)
@@ -154,7 +154,7 @@ We're not going to sell anyting, but, our Product idea is to have a model that r
 #### Original estimation
 [↑ To the section](#product)
 
-The initial stimation, it should be updated with the real roadmap at the end.
+The initial estimation, it should be updated with the real roadmap at the end.
 
 ![Roadmap](/pages/screenshots/home/Product%20Roadmap%2017-04-2022.png)
 <p align="center">Initial product roadmap</p>
@@ -510,4 +510,6 @@ As for the tools, Tableau, but maybe we could get PowerBI through studentship, i
 - Ismael, for the idea
 
 ## Gratitude
+[↑ Back to top](#table-of-contents)
 
+TODO
