@@ -1,6 +1,6 @@
 # https://docs.docker.com/compose/
 
-version: "0.12.0"  # optional since v1.27.0
+version: "0.12.4" # optional since v1.27.0
 
 # ----------ORDER----------
 # 1.  container_name
@@ -34,7 +34,7 @@ services:
     volumes:
       - node-red_data:/data
     networks:
-     - tfm-iabd-net
+      - tfm-iabd-net
     ports:
       - ${NODERED_EXTERNAL_PORT}:${NODERED_INTERNAL_PORT}
   spark-master:
@@ -54,13 +54,13 @@ services:
         restart_policy:
           condition: on-failure
     depends_on:
-     - kafka
-     - mongodb
+      - kafka
+      - mongo-db
     restart: always
     volumes:
       - spark_data:/spark
     networks:
-     - tfm-iabd-net
+      - tfm-iabd-net
     user: ${SPARK_USER}
     environment:
       SPARK_MODE: master
@@ -80,12 +80,12 @@ services:
         restart_policy:
           condition: on-failure
     depends_on:
-     - spark-master
+      - spark-master
     restart: always
     volumes:
       - src:/spark/src
     networks:
-     - tfm-iabd-net
+      - tfm-iabd-net
     user: ${SPARK_USER}
     environment:
       SPARK_MODE: worker
@@ -106,7 +106,7 @@ services:
     volumes:
       - mongodb_data:/data/db
     networks:
-     - tfm-iabd-net
+      - tfm-iabd-net
     ports:
       - ${MONGODB_EXTERNAL_PORT}:${MONGODB_INTERNAL_PORT}
     environment:
@@ -132,8 +132,8 @@ services:
     volumes:
       - zookeeper_data:/bitnami
     networks:
-     - tfm-iabd-net
-    ports:
+      - tfm-iabd-net
+    expose:
       - ${ZOOKEEPER_EXTERNAL_PORT}:${ZOOKEEPER_INTERNAL_PORT}
     user: root
     environment:
@@ -160,8 +160,8 @@ services:
     volumes:
       - kafka_data:/bitnami
     networks:
-     - tfm-iabd-net
-    ports:
+      - tfm-iabd-net
+    expose:
       - ${KAFKA_EXTERNAL_PORT}:${KAFKA_INTERNAL_PORT}
     command: boot.sh
     environment:
@@ -185,7 +185,7 @@ services:
     volumes:
       - backend_data:/data
     networks:
-     - tfm-iabd-net
+      - tfm-iabd-net
     expose:
       - ${BACKEND_EXTERNAL_PORT}:${BACKEND_INTERNAL_PORT}
   frontend:
@@ -206,7 +206,7 @@ services:
     volumes:
       - frontend_data:/data
     networks:
-     - tfm-iabd-net
+      - tfm-iabd-net
     ports:
       - ${FRONTEND_EXTERNAL_PORT}:${FRONTEND_INTERNAL_PORT}
 

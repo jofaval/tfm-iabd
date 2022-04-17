@@ -11,6 +11,10 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 
 - Created Kafka shell scripts for an easier control and usage
 
+### Modified
+
+- The Docker-Compose file, more details at the [CHANGELOG](./docs/deployment/docker/CHANGELOG.md)
+
 ## 2022-04-16
 
 ### Modified
