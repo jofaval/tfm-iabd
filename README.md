@@ -4,7 +4,9 @@ Artificial Intelligence and Big Data
 
 The motivation behind the project is to work as a team with the idea of joining everthing we've seen, in other words:
 
-Being able to design, research, develop and deploy a Data Science idea designing a Big Data Architecture from which to train a model with a conclusion in mind while being ethical and not breaking any EU laws
+Being able to design, research, develop and deploy a Data Science idea designing a Big Data Architecture from which to train a model with a conclusion in mind while being ethical and not breaking any EU laws.
+
+For reference about the changes, please, check out our [CHANGELOG](./CHANGELOG.md).
 
 ### <p align="right">Grade</p>
 <p align="right">
@@ -52,6 +54,7 @@ To be graded
 1. [License](#license)
 1. [Legal Notice](#legal-notice)
 1. [Credits](#credits)
+1. [Gratitude](#gratitude)
 
 ## Title
 [↑ Back to top](#table-of-contents)
