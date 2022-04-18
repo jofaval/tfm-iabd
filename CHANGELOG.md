@@ -11,6 +11,7 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 
 - Implemented the base Spark Transformer class logic
 - Added spark basic utilities to the `module` package
+- The `pyspark` package to the spark folder
 
 ## 2022-04-17
 
