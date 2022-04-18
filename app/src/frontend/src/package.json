@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
   "dependencies": {
     "element-ui": "^2.15.6",
     "flow-bin": "^0.175.0",

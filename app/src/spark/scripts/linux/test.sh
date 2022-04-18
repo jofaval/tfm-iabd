@@ -1,5 +1,8 @@
 #!/bin/bash
 
+./root.sh
+cd src/tests
+
 echo Install the necessary packages
 pip3 install -r test-requirements.txt
 
