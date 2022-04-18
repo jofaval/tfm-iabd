@@ -10,6 +10,7 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 ### Added
 
 - Implemented the base Spark Transformer class logic
+- Added spark basic utilities to the `module` package
 
 ## 2022-04-17
 
