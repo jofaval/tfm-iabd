@@ -21,8 +21,8 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 - Created Kafka shell scripts for an easier control and usage
 - Infrastructure is now explained and added to the Tech Stack section
 - Expanded the topics shell scripts
- - It now can list all the topics
- - It can create topics from a file
+  - It now can list all the topics
+  - It can create topics from a file
 - The python module is now correctly setup and ready for packaging and installation
 
 ### Modified
@@ -87,7 +87,7 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 ### Added
 
 - Backend container, there's a chance it may be moved to another repository, just for the website
- - FastAPI and uvicorn
+  - FastAPI and uvicorn
 - Create a Kafka topic shell script for easier usage
 
 ### Modified
@@ -111,9 +111,9 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 ### Modified
 
 - Moved files to an app folder structure for clearer organization
- - Renamed `src/app` to `app/src/module`
+  - Renamed `src/app` to `app/src/module`
 - Reestructure the tools folder
- - Adding support to windows and linux
+  - Adding support to windows and linux
 
 ### Fixed
 
