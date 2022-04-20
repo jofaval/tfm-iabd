@@ -5,6 +5,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
 
+## 2022-04-20
+
+### Added
+
+- Heaviliy configured the frontend package.json
+  - Vue-CLI is now used
+  - Added some scripts for utilities
+  - Add the package-required config files
+- Added the last team scripts, it now provides:
+  - Booting up part of the system
+  - Testing part of the system
+  - Installing part of the system
+
+### Modified
+
+- Polished the team scripts with some utilities
+  - Added missing dependencies
+
+### Fixed
+
+- Fixed some of the team scripts with incorrect path configuration
+
+## 2022-04-19
+
+### Added
+
+- Keep on adding more team scripts
+
 ## 2022-04-18
 
 ### Added
@@ -13,6 +41,12 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 - Added spark basic utilities to the `module` package
 - The `pyspark` package to the spark folder
 - Create basic Example Transformer test
+- Added team scripts utilities for an easier usage of the application
+
+### Modified
+
+- Reestructure the scripts into folders
+- Added the Vue-CLI scripts to the package.json in the frontend
 
 ## 2022-04-17
 
