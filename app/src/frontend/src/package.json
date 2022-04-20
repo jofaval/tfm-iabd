@@ -6,7 +6,9 @@
   "dependencies": {
     "element-ui": "^2.15.6",
     "flow-bin": "^0.175.0",
-    "vue": "^2.6.14"
+    "jest": "^27.5.1",
+    "vue": "^2.6.14",
+    "vue-cli": "^2.9.6"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.17.0",
