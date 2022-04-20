@@ -11,3 +11,8 @@ REM Tests the Frontend
 cd frontend/scripts/windows
 start test.bat
 cd ../../../
+
+REM Tests the Backend
+cd backend/scripts/windows
+start test.bat
+cd ../../../
