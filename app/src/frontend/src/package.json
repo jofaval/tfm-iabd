@@ -2,7 +2,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit",
+    "lint": "eslint --ext js,vue src/** && prettier --check .",
+    "format": "prettier --write .",
+    "flow": "flow",
+    "postinstall": "node ./hooks.js && npm un husky && npm i -D husky"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "flow && lint && format",
+      "pre-push": "flow && lint && format && test"
+    }
   },
   "dependencies": {
     "element-ui": "^2.15.6",
@@ -16,6 +26,8 @@
     "@typescript-eslint/parser": "^5.17.0",
     "eslint": "^8.12.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-vue": "^8.5.0"
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.2"
   }
 }
