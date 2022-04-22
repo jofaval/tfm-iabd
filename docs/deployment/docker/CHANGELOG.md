@@ -6,6 +6,13 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
+### Patch - 0.13.0 (2022-04-22)
+
+#### Fixes
+
+- The base build path is now services
+- The images' context now uses the `BUILD_GLOBAL_PATH` constant
+
 ### Minor - 0.12.6 (2022-04-17)
 
 #### Features

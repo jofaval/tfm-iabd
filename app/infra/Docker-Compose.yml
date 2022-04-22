@@ -1,6 +1,6 @@
 # https://docs.docker.com/compose/
 
-version: "0.12.6" # optional since v1.27.0
+version: "0.13.0" # optional since v1.27.0
 
 # ----------ORDER----------
 # 1.  container_name
@@ -21,7 +21,7 @@ services:
     container_name: node-red
     # https://hub.docker.com/r/nodered/node-red/
     build:
-      context: ${NODERED_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}${NODERED_BUILD_PATH}
     image: node-red:${NODERED_VERSION}
     depends_on:
       - kafka
@@ -45,7 +45,7 @@ services:
     container_name: spark-master
     # https://dev.to/mvillarrealb/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-2021-update-6l4
     build:
-      context: ${SPARK_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}${SPARK_BUILD_PATH}
     image: spark-master:${SPARK_VERSION}
     # scale: 2
     deploy:
@@ -73,7 +73,7 @@ services:
     container_name: spark-worker
     # https://hub.docker.com/r/bitnami/spark/
     build:
-      context: ${SPARK_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}${SPARK_BUILD_PATH}
     image: spark-worker:${SPARK_VERSION}
     # scale: 6
     deploy:
@@ -101,7 +101,7 @@ services:
     container_name: mongo-db
     # https://hub.docker.com/r/_/mongo/
     build:
-      context: ${MONGODB_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}${MONGODB_BUILD_PATH}
     image: mongo-db:${MONGODB_VERSION}
     # scale: 2
     deploy:
@@ -126,7 +126,7 @@ services:
     container_name: zookeeper
     # https://www.baeldung.com/ops/kafka-docker-setup
     build:
-      context: ${ZOOKEEPER_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}${ZOOKEEPER_BUILD_PATH}
     image: zookeeper:${ZOOKEEPER_VERSION}
     # scale: 2
     deploy:
@@ -154,7 +154,7 @@ services:
     container_name: kafka
     # https://hub.docker.com/r/bitnami/kafka/
     build:
-      context: ${KAFKA_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}${KAFKA_BUILD_PATH}
     image: kafka:${KAFKA_VERSION}
     # scale: 6
     deploy:
@@ -184,7 +184,7 @@ services:
     container_name: backend
     # https://fastapi.tiangolo.com/deployment/docker/
     build:
-      context: ${BACKEND_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}${BACKEND_BUILD_PATH}
     image: backend:${BACKEND_VERSION}
     depends_on:
       - mongo-db
@@ -207,7 +207,7 @@ services:
     container_name: frontend
     # https://hub.docker.com/_/node
     build:
-      context: ${FRONTEND_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}${FRONTEND_BUILD_PATH}
     image: frontend:${FRONTEND_VERSION}
     depends_on:
       - backend
