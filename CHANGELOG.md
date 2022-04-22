@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
 
+## 2022-04-22
+
+### Modified
+
+- Renamed `app/src` to `app/services` for a better semantic. And adjuested the necessary components.
+  - Due to this change, history is lost, but ONLY on Github, the history still remains on the git
+
 ## 2022-04-20
 
 ### Added
