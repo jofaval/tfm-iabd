@@ -1,6 +1,6 @@
 # https://docs.docker.com/compose/
 
-version: "0.13.0" # optional since v1.27.0
+version: "0.14.0" # optional since v1.27.0
 
 # ----------ORDER----------
 # 1.  container_name
@@ -226,6 +226,75 @@ services:
       - tfm-iabd-net
     ports:
       - ${FRONTEND_EXTERNAL_PORT}:${FRONTEND_INTERNAL_PORT}
+  elasticsearch:
+    container_name: elasticsearch
+    # https://hub.docker.com/_/node
+    build:
+      context: ${BUILD_GLOBAL_PATH}${ELASTICSEARCH_BUILD_PATH}
+    image: elasticsearch:${ELASTICSEARCH_VERSION}
+    depends_on:
+      - backend
+    # scale: 1
+    deploy:
+      resources:
+        reservations:
+          cpus: '1'
+          memory: 512M
+        restart_policy:
+          condition: on-failure
+    restart: always
+    volumes:
+      - elasticsearch_data:/data
+    networks:
+      - tfm-iabd-net
+    ports:
+      - ${ELASTICSEARCH_EXTERNAL_PORT}:${ELASTICSEARCH_INTERNAL_PORT}
+  kibana:
+    container_name: kibana
+    # https://hub.docker.com/_/node
+    build:
+      context: ${BUILD_GLOBAL_PATH}${KIBANA_BUILD_PATH}
+    image: kibana:${KIBANA_VERSION}
+    depends_on:
+      - backend
+    # scale: 1
+    deploy:
+      resources:
+        reservations:
+          cpus: '1'
+          memory: 512M
+        restart_policy:
+          condition: on-failure
+    restart: always
+    volumes:
+      - kibana_data:/data
+    networks:
+      - tfm-iabd-net
+    ports:
+      - ${KIBANA_EXTERNAL_PORT}:${KIBANA_INTERNAL_PORT}
+  logstash:
+    container_name: logstash
+    # https://hub.docker.com/_/node
+    build:
+      context: ${BUILD_GLOBAL_PATH}${LOGSTASH_BUILD_PATH}
+    image: logstash:${LOGSTASH_VERSION}
+    depends_on:
+      - backend
+    # scale: 1
+    deploy:
+      resources:
+        reservations:
+          cpus: '1'
+          memory: 512M
+        restart_policy:
+          condition: on-failure
+    restart: always
+    volumes:
+      - logstash_data:/data
+    networks:
+      - tfm-iabd-net
+    ports:
+      - ${LOGSTASH_EXTERNAL_PORT}:${LOGSTASH_INTERNAL_PORT}
 
 volumes:
   node-red_data:
@@ -241,6 +310,12 @@ volumes:
   backend_data:
     driver: "local"
   frontend_data:
+    driver: "local"
+  elasticsearch_data:
+    driver: "local"
+  kibana_data:
+    driver: "local"
+  logstash_data:
     driver: "local"
 networks:
   tfm-iabd-net: {}

@@ -6,6 +6,15 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
+### Major - 0.14.0 (2022-04-22)
+
+#### Features
+
+- Implemented the base ELK stack, which includes:
+  - Elasticsearch
+  - Logstash
+  - Kibana
+
 ### Patch - 0.13.0 (2022-04-22)
 
 #### Fixes
