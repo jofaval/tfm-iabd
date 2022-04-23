@@ -3,13 +3,21 @@
 ./root.sh
 
 echo Install the python module
-cd module
-call install.sh
+cd module/scripts/linux/
+./install.sh
+cd ../../../
 
 echo Install the backend
-cd ../backend
-call devinstall.sh
+cd backend/scripts/linux/
+./devinstall.sh
+cd ../../../
 
 echo Install the frontend
-cd ../frontend
-call install.sh
+cd frontend/scripts/linux/
+./install.sh
+cd ../../../
+
+echo Install the Node-RED packages
+cd node-red/scripts/linux/
+./install.sh
+cd ../../../

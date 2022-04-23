@@ -13,3 +13,8 @@ echo Start the Backend service
 cd backend/src/scripts/windows
 ./start.sh
 cd ../../../
+
+echo Start the Node-RED service
+cd node-red/scripts/linux
+./start.sh
+cd ../../../

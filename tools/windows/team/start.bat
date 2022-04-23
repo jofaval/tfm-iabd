@@ -11,3 +11,8 @@ REM Start the Backend service
 cd backend/src/scripts/windows
 start start.bat
 cd ../../../
+
+REM Start the Node-RED service
+cd node-red/scripts/windows
+start start.bat
+cd ../../../

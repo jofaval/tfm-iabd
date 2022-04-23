@@ -5,7 +5,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
 
+## 2022-04-23
+
+### Added
+
+- Configured the Node-RED service with some basic scripts and the base dependency file (package.json)
+
+### Fixed
+
+- The team scritps for the installation were incomplete, the script paths were.
+
 ## 2022-04-22
+
+### Added
+
+- Creating the Node-RED initial flow(s) configuration.
 
 ### Modified
 

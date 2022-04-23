@@ -1,0 +1,5 @@
+{
+    "dependencies": {
+        "node-red-contrib-kafka-client": "0.0.10"
+    }
+}
