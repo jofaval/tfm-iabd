@@ -275,6 +275,8 @@ A cloud-agnostic standard for container orchestration maintained by Docker that 
   - > Compose Version 1.29.2
 - Python
   - > \>= 3.6.x
+- Node
+  - > \>= v15.14.0
 
 _All the images versions will be provided on each Dockerfile with the exact version, avoid the `latest` for security reasons, upgrades will be manual._
 
