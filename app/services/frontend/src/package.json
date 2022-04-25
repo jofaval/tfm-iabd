@@ -2,7 +2,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "vue-cli-service test:unit",
+    "jest": "vue-cli-service test:unit",
+    "test": "flow && lint && jest",
     "lint": "eslint --ext js,vue src/** && prettier --check .",
     "format": "prettier --write .",
     "flow": "flow",
@@ -11,7 +12,8 @@
   "husky": {
     "hooks": {
       "pre-commit": "flow && lint && format",
-      "pre-push": "flow && lint && format && test"
+      "pre-push": "format && test",
+      "post-merge": "format"
     }
   },
   "dependencies": {
