@@ -5,11 +5,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
 
+## 2022-04-25
+
+### Modified
+
+- Slightly improve the README
+- Adjust and improve the package.json scripts and cycle
+
 ## 2022-04-23
 
 ### Added
 
 - Configured the Node-RED service with some basic scripts and the base dependency file (package.json)
+
+### Modified
+
+- Keep on improving the base Node-RED flow.
+  - Created, as an example, the base Twitter flow, with room for improvement. It still needs some tweaks here and there.
 
 ### Fixed
 
@@ -20,6 +32,7 @@ For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELO
 ### Added
 
 - Creating the Node-RED initial flow(s) configuration.
+  - Created the basic tabs and overall environment configuration.
 
 ### Modified
 
