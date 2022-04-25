@@ -2,12 +2,17 @@
 
 const { exec } = require('child_process');
 const fs = require('fs');
+const DEFAULT_RESPONSE = 0;
+const ERROR_RESPONSE = -1;
 
 const executeCommand = (command) => {
+    let result = DEFAULT_RESPONSE;
+
     exec(command, (err, stdout, stderr) => {
         if (err) {
             // node couldn't execute the command
-            console.log(`echo global error while removing the hooks`, err);
+            console.error(`global error while removing the hooks`, err);
+            result = ERROR_RESPONSE;
             return;
         }
 
@@ -15,6 +20,8 @@ const executeCommand = (command) => {
         // console.log(`echo stdout: ${stdout}`);
         // console.log(`echo stderr: ${stderr}`);
     });
+
+    return result;
 };
 
 const getCommandName = () => {
@@ -37,6 +44,7 @@ const init = () => {
     const command = getCommandName();
     const basepath = '../../../..';
     const hooksFilename = '.git/hooks/';
+    let result = DEFAULT_RESPONSE;
 
     // https://flaviocopes.com/how-to-check-if-file-exists-node/
     fs.access([basepath, hooksFilename].join('/'), fs.F_OK, (err) => {
@@ -47,7 +55,13 @@ const init = () => {
         }
 
         //file exists
-        executeCommand(`cd ${basepath} && ${command} "./${hooksFilename}"`);
+        result = executeCommand(`cd ${basepath} && ${command} "./${hooksFilename}"`);
     });
+
+    if (result == ERROR_RESPONSE) {
+        console.error('An error ocurred while trying to delete the git hooks');
+    }
+
+    process.exit(result);
 };
 init();
