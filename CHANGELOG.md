@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 For the Docker's CHANGELOG please [click here](./docs/deployment/docker/CHANGELOG.md).
 
+## 2022-04-27
+
+### Added
+
+- Uploaded the Node-RED main flow to Github
+
+### Modified
+
+- Remove old unusable Node-RED subflows
+
 ## 2022-04-25
 
 ### Modified
