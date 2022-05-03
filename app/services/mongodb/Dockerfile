@@ -1,6 +1,5 @@
 # https://docs.docker.com/engine/reference/builder/
 # Official doc: https://hub.docker.com/_/mongo
-
 # TODO: configure
 
 # Pull base image.
@@ -8,17 +7,25 @@ FROM debian:latest
 
 # Install MongoDB.
 RUN \
-  apt-get install gnupg2 wget -y && \
-  wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add - echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list && \
+  apt-get update && \
+  apt-get install -y dirmngr gnupg apt-transport-https software-properties-common ca-certificates curl && \
+  curl -fsSL https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add - && \
+  add-apt-repository 'deb https://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main' && \
   apt-get update && \
   apt-get install -y mongodb-org openssh-server && \
-  rm -rf /var/lib/apt/lists/* && \
-  systemctl enable ssh && \
-  systemctl restart mongod
+  useradd -ms /bin/bash admin && \
+  mkdir -p /data/db && \
+  chmod 777 /data/db
+  
+# User without pass  
+USER admin 
 
+
+# Start mongo and ssh services when docker starts  
+CMD service mongod start && service ssh start
 
 # Define working directory.
-WORKDIR /data
+WORKDIR /home/admin
 
 # Define default command.
 CMD ["mongod"]
