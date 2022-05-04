@@ -1,6 +1,5 @@
 # https://docs.docker.com/engine/reference/builder/
 # Official doc: https://hub.docker.com/_/mongo
-# TODO: configure
 
 # Pull base image.
 FROM debian:latest
@@ -15,7 +14,8 @@ RUN \
   apt-get install -y mongodb-org openssh-server && \
   useradd -ms /bin/bash admin && \
   mkdir -p /data/db && \
-  chmod 777 /data/db
+  chmod 777 /data/db && \
+  apt-get install -y net-tools
   
 # User without pass  
 USER admin 
