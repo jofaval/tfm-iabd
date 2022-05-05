@@ -1,5 +1,6 @@
 # https://docs.docker.com/engine/reference/builder/
 # Official doc: https://hub.docker.com/_/mongo
+# TODO: configure
 
 # Pull base image.
 FROM debian:latest
@@ -11,11 +12,11 @@ RUN \
   curl -fsSL https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add - && \
   add-apt-repository 'deb https://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main' && \
   apt-get update && \
-  apt-get install -y mongodb-org openssh-server && \
+  apt-get install -y mongodb-org openssh-server sudo && \
   useradd -ms /bin/bash admin && \
+  passwd -d admin && \
   mkdir -p /data/db && \
-  chmod 777 /data/db && \
-  apt-get install -y net-tools
+  chmod 777 /data/db
   
 # User without pass  
 USER admin 
