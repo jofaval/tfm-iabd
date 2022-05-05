@@ -15,6 +15,7 @@ RUN \
   apt-get install -y mongodb-org openssh-server sudo && \
   useradd -ms /bin/bash admin && \
   passwd -d admin && \
+  usermod -aG sudo admin && \
   mkdir -p /data/db && \
   chmod 777 /data/db
   
