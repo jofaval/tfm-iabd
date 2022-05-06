@@ -6,6 +6,18 @@ and this CHANGELOG adheres to [Semantic Versioning](https://semver.org/spec/v2.0
 
 ## 0.x.x
 
+### Major - 0.16.0 (2022-05-04)
+
+#### Features
+
+- Implemented the base Keras Dockerfile, which uses GPU.
+
+### Major - 0.15.0 (2022-05-03)
+
+#### Features
+
+- Implemented the base MongoDB Dockerfile.
+
 ### Major - 0.14.0 (2022-04-22)
 
 #### Features
