@@ -2,7 +2,7 @@
 # Official doc: https://hub.docker.com/r/tensorflow/tensorflow/
 
 # Pull base image.
-FROM tensorflow/tensorflow:latest
+FROM tensorflow/tensorflow:2.9.0rc2-gpu
 
 # Install packages.
 RUN \
