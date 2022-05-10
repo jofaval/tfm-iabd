@@ -1,6 +1,6 @@
 # https://docs.docker.com/compose/
 
-version: "0.14.0" # optional since v1.27.0
+version: "0.16.0" # optional since v1.27.0
 
 # ----------ORDER----------
 # 1.  container_name

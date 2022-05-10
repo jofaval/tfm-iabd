@@ -4,7 +4,7 @@
 # Pull base image.
 FROM tensorflow/tensorflow:2.9.0rc2-gpu
 
-# ADD ../commons.sh .
+# Install the common utilities.
 COPY commons.sh .
 RUN ./commons.sh  
 
