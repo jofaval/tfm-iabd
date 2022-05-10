@@ -1,22 +1,22 @@
 # https://docs.docker.com/engine/reference/builder/
 # Official doc: https://hub.docker.com/nodered/node-red
 
-FROM nodered/node-red
+FROM nodered/node-red:2.2.2-12
 
-# Copy package.json to the WORKDIR so npm builds all
-# of your added nodes modules for Node-RED
-COPY data/package.json .
+# Copy the requirements file
+COPY ./node-red/data/package.json /data/package.json
+RUN cd /data && npm install
 
-# Copy _your_ Node-RED project files into place
-# NOTE: This will only work if you DO NOT later mount /data as an external volume.
-#       If you need to use an external volume for persistence then
-#       copy your settings and flows files to that volume instead.
-COPY data/settings.js /data/settings.js
-COPY data/flows_cred.json /data/flows_cred.json
-COPY data/flows.json /data/flows.json
+# Copy Node-RED configuration files
+COPY ./node-red/data/settings.js /data/settings.js
+COPY ./node-red/data/flows_cred.json /data/flows_cred.json
+COPY ./node-red/data/flows.json /data/flows.json
 
-COPY scripts/* scripts/*
+# Copy all the utilities scripts
+COPY ./node-red/scripts/linux/boot.sh /scripts/linux/boot.sh
+COPY ./node-red/scripts/linux/install.sh /scripts/linux/install.sh
+COPY ./node-red/scripts/linux/root.sh /scripts/linux/root.sh
+COPY ./node-red/scripts/linux/start.sh /scripts/linux/start.sh
 
-# You should add extra nodes via your package.json file but you can also add them here:
 WORKDIR /usr/src/node-red
-RUN scripts/linux/boot.sh
+RUN /scripts/linux/boot.sh
