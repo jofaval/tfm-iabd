@@ -290,6 +290,20 @@ git clone https://github.com/jofaval/tfm-iabd.git
 cd tfm-iabd
 ```
 
+And now configure the project's branches with Git flow
+
+For Windows
+```bash
+cd tools/windows/git/
+git-flow.bat
+```
+
+For Linux
+```bash
+cd tools/linux/git/
+./git-flow.sh
+```
+
 ### How to boot it
 [↑ To the section](#usage)
 
