@@ -21,7 +21,8 @@ services:
     container_name: node-red
     # https://hub.docker.com/r/nodered/node-red/
     build:
-      context: ${BUILD_GLOBAL_PATH}${NODERED_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${NODERED_BUILD_PATH}Dockerfile.
     image: node-red:${NODERED_VERSION}
     depends_on:
       - kafka
@@ -45,7 +46,8 @@ services:
     container_name: spark-master
     # https://dev.to/mvillarrealb/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-2021-update-6l4
     build:
-      context: ${BUILD_GLOBAL_PATH}${SPARK_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${SPARK_BUILD_PATH}Dockerfile.
     image: spark-master:${SPARK_VERSION}
     # scale: 2
     deploy:
@@ -73,7 +75,8 @@ services:
     container_name: spark-worker
     # https://hub.docker.com/r/bitnami/spark/
     build:
-      context: ${BUILD_GLOBAL_PATH}${SPARK_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${SPARK_BUILD_PATH}Dockerfile.
     image: spark-worker:${SPARK_VERSION}
     # scale: 6
     deploy:
@@ -101,7 +104,8 @@ services:
     container_name: mongo-db
     # https://hub.docker.com/r/_/mongo/
     build:
-      context: ${BUILD_GLOBAL_PATH}${MONGODB_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${MONGODB_BUILD_PATH}Dockerfile.
     image: mongo-db:${MONGODB_VERSION}
     # scale: 2
     deploy:
@@ -126,7 +130,8 @@ services:
     container_name: zookeeper
     # https://www.baeldung.com/ops/kafka-docker-setup
     build:
-      context: ${BUILD_GLOBAL_PATH}${ZOOKEEPER_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${ZOOKEEPER_BUILD_PATH}Dockerfile.
     image: zookeeper:${ZOOKEEPER_VERSION}
     # scale: 2
     deploy:
@@ -154,7 +159,8 @@ services:
     container_name: kafka
     # https://hub.docker.com/r/bitnami/kafka/
     build:
-      context: ${BUILD_GLOBAL_PATH}${KAFKA_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${KAFKA_BUILD_PATH}Dockerfile.
     image: kafka:${KAFKA_VERSION}
     # scale: 6
     deploy:
@@ -184,7 +190,8 @@ services:
     container_name: backend
     # https://fastapi.tiangolo.com/deployment/docker/
     build:
-      context: ${BUILD_GLOBAL_PATH}${BACKEND_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${BACKEND_BUILD_PATH}Dockerfile.
     image: backend:${BACKEND_VERSION}
     depends_on:
       - mongo-db
@@ -207,7 +214,8 @@ services:
     container_name: frontend
     # https://hub.docker.com/_/node
     build:
-      context: ${BUILD_GLOBAL_PATH}${FRONTEND_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${FRONTEND_BUILD_PATH}Dockerfile.
     image: frontend:${FRONTEND_VERSION}
     depends_on:
       - backend
@@ -230,7 +238,8 @@ services:
     container_name: elasticsearch
     # https://hub.docker.com/_/node
     build:
-      context: ${BUILD_GLOBAL_PATH}${ELASTICSEARCH_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${ELASTICSEARCH_BUILD_PATH}Dockerfile.
     image: elasticsearch:${ELASTICSEARCH_VERSION}
     depends_on:
       - backend
@@ -253,7 +262,8 @@ services:
     container_name: kibana
     # https://hub.docker.com/_/node
     build:
-      context: ${BUILD_GLOBAL_PATH}${KIBANA_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${KIBANA_BUILD_PATH}Dockerfile.
     image: kibana:${KIBANA_VERSION}
     depends_on:
       - backend
@@ -276,7 +286,8 @@ services:
     container_name: logstash
     # https://hub.docker.com/_/node
     build:
-      context: ${BUILD_GLOBAL_PATH}${LOGSTASH_BUILD_PATH}
+      context: ${BUILD_GLOBAL_PATH}
+      dockerfile: ${BUILD_GLOBAL_PATH}${LOGSTASH_BUILD_PATH}Dockerfile.
     image: logstash:${LOGSTASH_VERSION}
     depends_on:
       - backend
