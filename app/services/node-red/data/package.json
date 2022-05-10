@@ -1,5 +1,8 @@
 {
     "dependencies": {
         "node-red-contrib-kafka-client": "0.0.10"
+    },
+    "scripts": {
+        "start": "node-red"
     }
 }
