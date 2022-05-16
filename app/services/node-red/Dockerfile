@@ -4,19 +4,18 @@
 FROM nodered/node-red:2.2.2-12
 
 # Copy the requirements file
-COPY ./node-red/data/package.json /data/package.json
+COPY ./data/package.json /data/package.json
 RUN cd /data && npm install
 
 # Copy Node-RED configuration files
-COPY ./node-red/data/settings.js /data/settings.js
-COPY ./node-red/data/flows_cred.json /data/flows_cred.json
-COPY ./node-red/data/flows.json /data/flows.json
+COPY ./data/settings.js /data/settings.js
+COPY ./data/flows_cred.json /data/flows_cred.json
+COPY ./data/flows.json /data/flows.json
 
 # Copy all the utilities scripts
-COPY ./node-red/scripts/linux/boot.sh /scripts/linux/boot.sh
-COPY ./node-red/scripts/linux/install.sh /scripts/linux/install.sh
-COPY ./node-red/scripts/linux/root.sh /scripts/linux/root.sh
-COPY ./node-red/scripts/linux/start.sh /scripts/linux/start.sh
+COPY ./scripts/linux/boot.sh /usr/src/node-red/boot.sh
+COPY ./scripts/linux/install.sh /usr/src/node-red/install.sh
+COPY ./scripts/linux/root.sh /usr/src/node-red/root.sh
+COPY ./scripts/linux/start.sh /usr/src/node-red/start.sh
 
 WORKDIR /usr/src/node-red
-RUN /scripts/linux/boot.sh

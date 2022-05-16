@@ -1,6 +1,9 @@
 {
     "dependencies": {
-        "node-red-contrib-kafka-client": "0.0.10"
+        "node-red-contrib-kafka-client": "0.0.10",
+        "node-red-dashboard":"3.0.4",
+        "node-red-node-twitter":"1.2.0"
+    
     },
     "scripts": {
         "start": "node-red"
