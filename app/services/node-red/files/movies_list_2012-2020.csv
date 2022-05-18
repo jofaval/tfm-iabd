@@ -1,4 +1,4 @@
-Movie title,Gross total,Max. theaters,Opening weekend gross,Release date,Score,Running time[min],Production Budget,genre_'Action',genre_'Adventure',genre_'Animation',genre_'Comedy',genre_'Documentary',genre_'Drama',genre_'Fantasy',genre_'Film noir',genre_'Horror',genre_'Kids',genre_'Musical',genre_'Mystery',genre_'Romance',genre_'Sci-Fi',genre_'TV Series',genre_'Thriller',genre_'War',genre_'Western'
+movie_title,gross_total,max_theaters,opening_weekend_gross,release_date,score,running_time_min,production_budget,genre_action,genre_adventure,genre_animation,genre_comedy,genre_documentary,genre_drama,genre_fantasy,genre_film_noir,genre_horror,genre_kids,genre_musical,genre_mystery,genre_romance,genre_sci-fi,genre_tv_series,genre_thriller,genre_war,genre_western
 The Avengers,623357910,4349,207438708,2012/05/4,3.0,89,225000000,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
 The Dark Knight Rises,448139099,4404,160887295,2012/07/20,7.5,164,230000000,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0
 The Hunger Games,408010692,4137,152535747,2012/03/23,6.2,143,80000000,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
