@@ -1,3 +1,3 @@
 REM Boots Node-RED
-start install.bat
-start start.bat
+call install.bat
+REM call start.bat
