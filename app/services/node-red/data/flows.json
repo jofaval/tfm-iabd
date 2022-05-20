@@ -1,0 +1,133 @@
+[
+    {
+        "id": "49a30fd64328fa08",
+        "type": "tab",
+        "label": "Insert movies list",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "37fc0b0c8c3237ea",
+        "type": "group",
+        "z": "49a30fd64328fa08",
+        "name": "Insert data",
+        "style": {
+            "stroke": "#92d04f",
+            "fill": "#c8e7a7",
+            "label": true,
+            "label-position": "n",
+            "color": "#000000"
+        },
+        "nodes": [
+            "112ac530fd32a95f",
+            "f5b72fd33d589196",
+            "2032560228933af9",
+            "de4f7cf217036664"
+        ],
+        "x": 134,
+        "y": 119,
+        "w": 652,
+        "h": 142
+    },
+    {
+        "id": "112ac530fd32a95f",
+        "type": "inject",
+        "z": "49a30fd64328fa08",
+        "g": "37fc0b0c8c3237ea",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 160,
+        "wires": [
+            [
+                "f5b72fd33d589196"
+            ]
+        ]
+    },
+    {
+        "id": "f5b72fd33d589196",
+        "type": "file in",
+        "z": "49a30fd64328fa08",
+        "g": "37fc0b0c8c3237ea",
+        "name": "",
+        "filename": "movies_list_2012-2020.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "2032560228933af9"
+            ]
+        ]
+    },
+    {
+        "id": "2032560228933af9",
+        "type": "csv",
+        "z": "49a30fd64328fa08",
+        "g": "37fc0b0c8c3237ea",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "de4f7cf217036664"
+            ]
+        ]
+    },
+    {
+        "id": "de4f7cf217036664",
+        "type": "mongodb out",
+        "z": "49a30fd64328fa08",
+        "g": "37fc0b0c8c3237ea",
+        "mongodb": "46b870258b442177",
+        "name": "",
+        "collection": "data",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 620,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "46b870258b442177",
+        "type": "mongodb",
+        "hostname": "172.17.0.3",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "movies_database",
+        "name": ""
+    }
+]
