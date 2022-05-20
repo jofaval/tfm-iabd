@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "145a41402584017e",
+        "type": "tab",
+        "label": "Initial injector",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "37fc0b0c8c3237ea",
         "type": "group",
         "z": "49a30fd64328fa08",
@@ -20,45 +28,25 @@
             "color": "#000000"
         },
         "nodes": [
-            "112ac530fd32a95f",
             "f5b72fd33d589196",
             "2032560228933af9",
-            "de4f7cf217036664"
+            "de4f7cf217036664",
+            "8488786108167a5d"
         ],
-        "x": 134,
-        "y": 119,
-        "w": 652,
+        "x": 104,
+        "y": 99,
+        "w": 562,
         "h": 142
     },
     {
-        "id": "112ac530fd32a95f",
-        "type": "inject",
-        "z": "49a30fd64328fa08",
-        "g": "37fc0b0c8c3237ea",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 240,
-        "y": 160,
-        "wires": [
-            [
-                "f5b72fd33d589196"
-            ]
-        ]
+        "id": "46b870258b442177",
+        "type": "mongodb",
+        "hostname": "172.17.0.2",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "movies_database",
+        "name": ""
     },
     {
         "id": "f5b72fd33d589196",
@@ -72,8 +60,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 460,
-        "y": 160,
+        "x": 340,
+        "y": 140,
         "wires": [
             [
                 "2032560228933af9"
@@ -96,8 +84,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 670,
-        "y": 160,
+        "x": 550,
+        "y": 140,
         "wires": [
             [
                 "de4f7cf217036664"
@@ -116,18 +104,105 @@
         "upsert": false,
         "multi": false,
         "operation": "insert",
-        "x": 620,
-        "y": 220,
+        "x": 500,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "46b870258b442177",
-        "type": "mongodb",
-        "hostname": "172.17.0.3",
-        "topology": "direct",
-        "connectOptions": "",
-        "port": "27017",
-        "db": "movies_database",
-        "name": ""
+        "id": "8488786108167a5d",
+        "type": "link in",
+        "z": "49a30fd64328fa08",
+        "g": "37fc0b0c8c3237ea",
+        "name": "",
+        "links": [
+            "d7fab0813a3e7d58"
+        ],
+        "x": 145,
+        "y": 140,
+        "wires": [
+            [
+                "f5b72fd33d589196"
+            ]
+        ]
+    },
+    {
+        "id": "edd178fa74be8c3a",
+        "type": "inject",
+        "z": "145a41402584017e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 100,
+        "wires": [
+            [
+                "b2937f825b5ce26a"
+            ]
+        ]
+    },
+    {
+        "id": "8d6914acc60a1c12",
+        "type": "switch",
+        "z": "145a41402584017e",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 100,
+        "wires": [
+            [
+                "d7fab0813a3e7d58"
+            ]
+        ]
+    },
+    {
+        "id": "b2937f825b5ce26a",
+        "type": "function",
+        "z": "145a41402584017e",
+        "name": "",
+        "func": "count=global.get(\"cont\")\nif (count==1){\n    global.set(\"cont\",2)\n    msg.payload=true\n}else{\n    msg.paylad=false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set(\"cont\",1) \n",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "8d6914acc60a1c12"
+            ]
+        ]
+    },
+    {
+        "id": "d7fab0813a3e7d58",
+        "type": "link out",
+        "z": "145a41402584017e",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "8488786108167a5d"
+        ],
+        "x": 625,
+        "y": 100,
+        "wires": []
     }
 ]
