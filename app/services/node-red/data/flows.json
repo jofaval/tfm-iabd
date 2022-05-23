@@ -35,13 +35,13 @@
         ],
         "x": 104,
         "y": 99,
-        "w": 562,
+        "w": 542,
         "h": 142
     },
     {
         "id": "46b870258b442177",
         "type": "mongodb",
-        "hostname": "172.17.0.2",
+        "hostname": "mongo",
         "topology": "direct",
         "connectOptions": "",
         "port": "27017",
@@ -104,7 +104,7 @@
         "upsert": false,
         "multi": false,
         "operation": "insert",
-        "x": 500,
+        "x": 490,
         "y": 200,
         "wires": []
     },
