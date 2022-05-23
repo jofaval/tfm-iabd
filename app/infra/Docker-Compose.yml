@@ -24,7 +24,7 @@ services:
       - mongodb_data:/data/db
     networks:
      - tfm-iabd-net
-    command: ["--bind_ip_all"]
+    command: mongod --bind_ip 0.0.0.0
     ports:
       - "27017:27017"
 volumes:
