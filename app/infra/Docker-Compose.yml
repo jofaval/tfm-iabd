@@ -27,9 +27,11 @@ services:
   models:
     container_name: models
     # https://hub.docker.com/r/_/mongo/
-    image: tensorflow/tensorflow:latest
+    image: jupyter/tensorflow-notebook:latest
     networks:
       - tfm-iabd-net
+    ports:
+      - "8888:8888"
 volumes:
   node-red_data:
     driver: "local"
