@@ -5,7 +5,6 @@ services:
     # https://hub.docker.com/r/nodered/node-red/
     build: ../services/node-red/
     image: node-red
-    restart: always
     volumes:
       - node-red_data:/data
     networks:
@@ -17,21 +16,26 @@ services:
   mongo:
     container_name: mongo-db
     # https://hub.docker.com/r/_/mongo/
-    build: ../services/mongodb/
-    image: mongo
-    restart: always
+    image: mongo:latest
     volumes:
       - mongodb_data:/data/db
     networks:
-     - tfm-iabd-net
+      - tfm-iabd-net
     command: mongod --bind_ip 0.0.0.0
     ports:
       - "27017:27017"
+  models:
+    container_name: models
+    # https://hub.docker.com/r/_/mongo/
+    image: tensorflow/tensorflow:latest
+    networks:
+      - tfm-iabd-net
 volumes:
   node-red_data:
     driver: "local"
   mongodb_data:
     driver: "local"
+  models:
+    driver: "local"
 networks:
   tfm-iabd-net: {}
-  
