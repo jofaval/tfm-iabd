@@ -5,20 +5,24 @@
 # Pull base image.
 FROM debian:latest
 
+
 # Install MongoDB.
-RUN \
-  apt-get update && \
+RUN apt-get update && \
   apt-get install -y dirmngr gnupg apt-transport-https software-properties-common ca-certificates curl && \
   curl -fsSL https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add - && \
-  add-apt-repository 'deb https://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main' && \
+  add-apt-repository 'deb https://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main' && \ 
   apt-get update && \
-  apt-get install -y mongodb-org openssh-server sudo && \
-  useradd -ms /bin/bash admin && \
-  passwd -d admin && \
-  usermod -aG sudo admin && \
+  apt-get install -y mongodb-org && \ 
   mkdir -p /data/db && \
   chmod 777 /data/db
-  
+
+# Install the common utilities.
+
+RUN apt-get update && \
+apt-get install -y openssh-server sudo nano iputils-ping && \
+useradd -ms /bin/bash admin && \
+passwd -d admin && \
+usermod -aG sudo admin
 # User without pass  
 USER admin 
 

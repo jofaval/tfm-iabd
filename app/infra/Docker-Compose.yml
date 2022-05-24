@@ -1,321 +1,36 @@
 # https://docs.docker.com/compose/
-
-version: "0.16.0" # optional since v1.27.0
-
-# ----------ORDER----------
-# 1.  container_name
-# 2.  build
-# 3.  image
-# 4.  scale
-# 5.  [deploy]
-# 6.  depends_on
-# 7.  restart
-# 8.  volumes
-# 9.  networks
-# 10. ports
-# 11. [user]
-# 12. [environment]
-
 services:
   node-red:
     container_name: node-red
     # https://hub.docker.com/r/nodered/node-red/
-    build:
-      context: ${BUILD_GLOBAL_PATH}${NODERED_BUILD_PATH}
-    image: node-red:${NODERED_VERSION}
-    depends_on:
-      - kafka
-    # scale: 1
-    deploy:
-      resources:
-        reservations:
-          cpus: '1'
-          memory: 256M
-        restart_policy:
-          condition: on-failure
+    build: ../services/node-red/
+    image: node-red
     restart: always
     volumes:
       - node-red_data:/data
     networks:
       - tfm-iabd-net
     ports:
-      - ${NODERED_EXTERNAL_PORT}:${NODERED_INTERNAL_PORT}
-  spark-master:
-    # https://hub.docker.com/r/bitnami/spark/
-    container_name: spark-master
-    # https://dev.to/mvillarrealb/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-2021-update-6l4
-    build:
-      context: ${BUILD_GLOBAL_PATH}${SPARK_BUILD_PATH}
-    image: spark-master:${SPARK_VERSION}
-    # scale: 2
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 512M
-        reservations:
-          cpus: '0.5'
-          memory: 64M
-        restart_policy:
-          condition: on-failure
+      - 1880:1880
     depends_on:
-      - kafka
-      - mongo-db
-    restart: always
-    volumes:
-      - spark_data:/spark
-    networks:
-      - tfm-iabd-net
-    user: ${SPARK_USER}
-    environment:
-      SPARK_MODE: master
-  spark-worker:
-    container_name: spark-worker
-    # https://hub.docker.com/r/bitnami/spark/
-    build:
-      context: ${BUILD_GLOBAL_PATH}${SPARK_BUILD_PATH}
-    image: spark-worker:${SPARK_VERSION}
-    # scale: 6
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 1G
-        reservations:
-          cpus: '0.5'
-          memory: 128M
-        restart_policy:
-          condition: on-failure
-    depends_on:
-      - spark-master
-    restart: always
-    volumes:
-      - src:/spark/src
-    networks:
-      - tfm-iabd-net
-    user: ${SPARK_USER}
-    environment:
-      SPARK_MODE: worker
-      SPARK_MASTER_URL: spark://spark:7077
+      - "mongo"
   mongo:
     container_name: mongo-db
     # https://hub.docker.com/r/_/mongo/
-    build:
-      context: ${BUILD_GLOBAL_PATH}${MONGODB_BUILD_PATH}
-    image: mongo-db:${MONGODB_VERSION}
-    # scale: 2
-    deploy:
-      resources:
-        reservations:
-          cpus: '1'
-          memory: 1G
-        restart_policy:
-          condition: on-failure
+    build: ../services/mongodb/
+    image: mongo
     restart: always
     volumes:
       - mongodb_data:/data/db
     networks:
       - tfm-iabd-net
+    command: mongod --bind_ip 0.0.0.0
     ports:
-      - ${MONGODB_EXTERNAL_PORT}:${MONGODB_INTERNAL_PORT}
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
-    # command: --serviceExecutor adaptive
-  zookeeper:
-    container_name: zookeeper
-    # https://www.baeldung.com/ops/kafka-docker-setup
-    build:
-      context: ${BUILD_GLOBAL_PATH}${ZOOKEEPER_BUILD_PATH}
-    image: zookeeper:${ZOOKEEPER_VERSION}
-    # scale: 2
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 256M
-        reservations:
-          cpus: '0.5'
-          memory: 128M
-        restart_policy:
-          condition: on-failure
-    restart: always
-    volumes:
-      - zookeeper_data:/bitnami
-    networks:
-      - tfm-iabd-net
-    expose:
-      - ${ZOOKEEPER_EXTERNAL_PORT}:${ZOOKEEPER_INTERNAL_PORT}
-    user: root
-    environment:
-      ALLOW_ANONYMOUS_LOGIN: yes
-      ZOO_MAX_CNXNS: ${ZOOKEEPER_MAX_CONECTIONS}
-  kafka:
-    container_name: kafka
-    # https://hub.docker.com/r/bitnami/kafka/
-    build:
-      context: ${BUILD_GLOBAL_PATH}${KAFKA_BUILD_PATH}
-    image: kafka:${KAFKA_VERSION}
-    # scale: 6
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 512M
-        reservations:
-          cpus: '0.5'
-          memory: 128M
-        restart_policy:
-          condition: on-failure
-    depends_on:
-      - zookeeper
-    restart: always
-    volumes:
-      - kafka_data:/bitnami
-    networks:
-      - tfm-iabd-net
-    expose:
-      - ${KAFKA_EXTERNAL_PORT}:${KAFKA_INTERNAL_PORT}
-    command: boot.sh
-    environment:
-      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:${ZOOKEEPER_EXTERNAL_PORT}
-      ALLOW_PLAINTEXT_LISTENER: yes
-  backend:
-    container_name: backend
-    # https://fastapi.tiangolo.com/deployment/docker/
-    build:
-      context: ${BUILD_GLOBAL_PATH}${BACKEND_BUILD_PATH}
-    image: backend:${BACKEND_VERSION}
-    depends_on:
-      - mongo-db
-    # scale: 1
-    deploy:
-      resources:
-        reservations:
-          cpus: '1'
-          memory: 256M
-        restart_policy:
-          condition: on-failure
-    restart: always
-    volumes:
-      - backend_data:/data
-    networks:
-      - tfm-iabd-net
-    expose:
-      - ${BACKEND_EXTERNAL_PORT}:${BACKEND_INTERNAL_PORT}
-  frontend:
-    container_name: frontend
-    # https://hub.docker.com/_/node
-    build:
-      context: ${BUILD_GLOBAL_PATH}${FRONTEND_BUILD_PATH}
-    image: frontend:${FRONTEND_VERSION}
-    depends_on:
-      - backend
-    # scale: 1
-    deploy:
-      resources:
-        reservations:
-          cpus: '1'
-          memory: 256M
-        restart_policy:
-          condition: on-failure
-    restart: always
-    volumes:
-      - frontend_data:/data
-    networks:
-      - tfm-iabd-net
-    ports:
-      - ${FRONTEND_EXTERNAL_PORT}:${FRONTEND_INTERNAL_PORT}
-  elasticsearch:
-    container_name: elasticsearch
-    # https://hub.docker.com/_/node
-    build:
-      context: ${BUILD_GLOBAL_PATH}${ELASTICSEARCH_BUILD_PATH}
-    image: elasticsearch:${ELASTICSEARCH_VERSION}
-    depends_on:
-      - backend
-    # scale: 1
-    deploy:
-      resources:
-        reservations:
-          cpus: '1'
-          memory: 512M
-        restart_policy:
-          condition: on-failure
-    restart: always
-    volumes:
-      - elasticsearch_data:/data
-    networks:
-      - tfm-iabd-net
-    ports:
-      - ${ELASTICSEARCH_EXTERNAL_PORT}:${ELASTICSEARCH_INTERNAL_PORT}
-  kibana:
-    container_name: kibana
-    # https://hub.docker.com/_/node
-    build:
-      context: ${BUILD_GLOBAL_PATH}${KIBANA_BUILD_PATH}
-    image: kibana:${KIBANA_VERSION}
-    depends_on:
-      - backend
-    # scale: 1
-    deploy:
-      resources:
-        reservations:
-          cpus: '1'
-          memory: 512M
-        restart_policy:
-          condition: on-failure
-    restart: always
-    volumes:
-      - kibana_data:/data
-    networks:
-      - tfm-iabd-net
-    ports:
-      - ${KIBANA_EXTERNAL_PORT}:${KIBANA_INTERNAL_PORT}
-  logstash:
-    container_name: logstash
-    # https://hub.docker.com/_/node
-    build:
-      context: ${BUILD_GLOBAL_PATH}${LOGSTASH_BUILD_PATH}
-    image: logstash:${LOGSTASH_VERSION}
-    depends_on:
-      - backend
-    # scale: 1
-    deploy:
-      resources:
-        reservations:
-          cpus: '1'
-          memory: 512M
-        restart_policy:
-          condition: on-failure
-    restart: always
-    volumes:
-      - logstash_data:/data
-    networks:
-      - tfm-iabd-net
-    ports:
-      - ${LOGSTASH_EXTERNAL_PORT}:${LOGSTASH_INTERNAL_PORT}
-
+      - "27017:27017"
 volumes:
   node-red_data:
     driver: "local"
-  spark_data:
-    driver: "local"
   mongodb_data:
-    driver: "local"
-  zookeeper_data:
-    driver: "local"
-  kafka_data:
-    driver: "local"
-  backend_data:
-    driver: "local"
-  frontend_data:
-    driver: "local"
-  elasticsearch_data:
-    driver: "local"
-  kibana_data:
-    driver: "local"
-  logstash_data:
     driver: "local"
 networks:
   tfm-iabd-net: {}
