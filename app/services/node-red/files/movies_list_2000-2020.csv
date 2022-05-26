@@ -1,4 +1,4 @@
-movie title,gross total,max theaters,opening weekend gross,release date,distributor,score,running time min,genres,production budget
+movie_title,gross_total,max_theaters,opening_weekend_gross,release_date,distributor,score,running_time_min,genres,production_budget
 How the Grinch Stole Christmas,260044825,3256,55082330,2000/11/17,Universal Pictures,4.4,105,"['Comedy', 'Fantasy', 'Kids']",123000000
 Cast Away,233632142,3061,28883406,2000/12/22,Twentieth Century Fox,7.2,143,"['Adventure', 'Drama']",85000000
 Mission: Impossible II,215409889,3669,57845297,2000/05/24,Paramount Pictures,,,[],85000000
