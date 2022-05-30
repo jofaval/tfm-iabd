@@ -16,7 +16,8 @@ services:
   mongo:
     container_name: mongo-db
     # https://hub.docker.com/r/_/mongo/
-    image: mongo:latest
+    build: ../services/mongodb/
+    image: mongo
     volumes:
       - mongodb_data:/data/db
     networks:
@@ -27,6 +28,7 @@ services:
   models:
     container_name: models
     # https://hub.docker.com/r/_/mongo/
+    build: ../services/model/
     image: jupyter/tensorflow-notebook:latest
     networks:
       - tfm-iabd-net

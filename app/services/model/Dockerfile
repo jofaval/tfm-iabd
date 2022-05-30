@@ -2,14 +2,16 @@
 # Official doc: https://hub.docker.com/r/tensorflow/tensorflow/
 
 # Pull base image.
-FROM tensorflow/tensorflow:2.9.0rc2-gpu
+FROM jupyter/tensorflow-notebook:latest
 
-# Install the common utilities.
-COPY commons.sh .
-RUN ./commons.sh  
+#Copy files and requirements
+COPY ./files/"MoviesModel_v2_(ML).ipynb" /home/jovyan/work
+COPY ./files/requirements.txt .
+#Install requirements
+RUN pip install --no-cache-dir --upgrade pip && \
+pip install --no-cache-dir -r requirements.txt
+USER root
+RUN chmod 777 "/home/jovyan/work/MoviesModel_v2_(ML).ipynb"
 
-# User without pass  
-USER admin 
-
-# Define working directory.
-WORKDIR /home/admin
+#Expose port
+EXPOSE 8888
