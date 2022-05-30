@@ -31,12 +31,15 @@
             "f5b72fd33d589196",
             "2032560228933af9",
             "de4f7cf217036664",
-            "8488786108167a5d"
+            "8488786108167a5d",
+            "044879b588b88097",
+            "1c62818e0e5b9a5d",
+            "51c0afef766008f3"
         ],
-        "x": 104,
-        "y": 99,
-        "w": 542,
-        "h": 142
+        "x": 144,
+        "y": 59,
+        "w": 642,
+        "h": 302
     },
     {
         "id": "46b870258b442177",
@@ -47,6 +50,66 @@
         "port": "27017",
         "db": "movies_database",
         "name": ""
+    },
+    {
+        "id": "044879b588b88097",
+        "type": "file in",
+        "z": "49a30fd64328fa08",
+        "g": "37fc0b0c8c3237ea",
+        "name": "",
+        "filename": "metacritic_comments_clean.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "1c62818e0e5b9a5d"
+            ]
+        ]
+    },
+    {
+        "id": "1c62818e0e5b9a5d",
+        "type": "csv",
+        "z": "49a30fd64328fa08",
+        "g": "37fc0b0c8c3237ea",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 630,
+        "y": 260,
+        "wires": [
+            [
+                "51c0afef766008f3"
+            ]
+        ]
+    },
+    {
+        "id": "51c0afef766008f3",
+        "type": "mongodb out",
+        "z": "49a30fd64328fa08",
+        "g": "37fc0b0c8c3237ea",
+        "mongodb": "46b870258b442177",
+        "name": "",
+        "collection": "metacritic_data",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 590,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "f5b72fd33d589196",
@@ -60,8 +123,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 340,
-        "y": 140,
+        "x": 400,
+        "y": 100,
         "wires": [
             [
                 "2032560228933af9"
@@ -84,8 +147,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 550,
-        "y": 140,
+        "x": 610,
+        "y": 100,
         "wires": [
             [
                 "de4f7cf217036664"
@@ -104,8 +167,8 @@
         "upsert": false,
         "multi": false,
         "operation": "insert",
-        "x": 490,
-        "y": 200,
+        "x": 550,
+        "y": 160,
         "wires": []
     },
     {
@@ -117,11 +180,12 @@
         "links": [
             "d7fab0813a3e7d58"
         ],
-        "x": 145,
-        "y": 140,
+        "x": 185,
+        "y": 180,
         "wires": [
             [
-                "f5b72fd33d589196"
+                "f5b72fd33d589196",
+                "044879b588b88097"
             ]
         ]
     },
@@ -199,11 +263,12 @@
         "name": "",
         "mode": "link",
         "links": [
-            "8488786108167a5d"
+            "8488786108167a5d",
+            "243b081e014c6d5c",
+            "494ac1954689a4eb"
         ],
         "x": 625,
         "y": 100,
         "wires": []
     }
-    
 ]
