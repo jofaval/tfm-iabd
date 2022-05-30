@@ -19,4 +19,5 @@ COPY ./scripts/linux/install.sh /usr/src/node-red/install.sh
 COPY ./scripts/linux/root.sh /usr/src/node-red/root.sh
 COPY ./scripts/linux/start.sh /usr/src/node-red/start.sh
 
+
 WORKDIR /usr/src/node-red
