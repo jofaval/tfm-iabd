@@ -8,7 +8,7 @@ FROM mongo:latest
 
 # Install Dependencies
 RUN apt-get update && \
-apt-get install -y dirmngr gnupg apt-transport-https software-properties-common ca-certificates curl  && \
+apt-get install -y dirmngr gnupg apt-transport-https ca-certificates curl  && \
 apt-get update && \
 apt-get install -y openssh-server sudo nano iputils-ping && \
 useradd -ms /bin/bash admin && \
