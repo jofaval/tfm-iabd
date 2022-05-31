@@ -1,0 +1,4 @@
+algorithm_name,score,target
+random_forest_classifier,46.8421052631579,score
+linear_regression,83.19824854132133,gross_total
+random_forest_regressor,71.71863909119539,opening_weekend_gross
